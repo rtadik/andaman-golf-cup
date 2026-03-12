@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andaman Golf Cup — Content Editor</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #1a1a2e;
+      --bg2:        #16213e;
+      --bg3:        #0f3460;
+      --surface:    #1e2a45;
+      --surface2:   #253454;
+      --gold:       #C9A84C;
+      --gold-light: #e0c06a;
+      --text:       #e8eaf0;
+      --text-muted: #8892a4;
+      --border:     #2e3d5c;
+      --green:      #2ecc71;
+      --radius:     8px;
+    }
+
+    html { font-size: 15px; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── STICKY HEADER ─────────────────────────────────────────── */
+    #header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg2);
+      border-bottom: 2px solid var(--gold);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      min-height: 60px;
+      flex-wrap: wrap;
+    }
+
+    #header h1 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gold);
+      white-space: nowrap;
+      letter-spacing: 0.03em;
+    }
+
+    #header .divider {
+      width: 1px;
+      height: 28px;
+      background: var(--border);
+    }
+
+    /* Language tabs */
+    #lang-tabs {
+      display: flex;
+      gap: 4px;
+    }
+
+    .lang-tab {
+      padding: 6px 18px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+      letter-spacing: 0.05em;
+    }
+
+    .lang-tab:hover { border-color: var(--gold); color: var(--gold); }
+
+    .lang-tab.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #1a1a2e;
+    }
+
+    /* Export button */
+    #export-btn {
+      margin-left: auto;
+      padding: 8px 22px;
+      background: var(--gold);
+      color: #1a1a2e;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      letter-spacing: 0.04em;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+
+    #export-btn:hover { background: var(--gold-light); }
+
+    #export-btn:active { transform: scale(0.98); }
+
+    /* ── MAIN LAYOUT ───────────────────────────────────────────── */
+    #main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 28px 20px 60px;
+    }
+
+    .page-note {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      margin-bottom: 24px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .page-note strong { color: var(--gold); }
+
+    /* ── ACCORDION SECTIONS ────────────────────────────────────── */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      cursor: pointer;
+      user-select: none;
+      background: var(--surface);
+      transition: background 0.12s;
+    }
+
+    .section-header:hover { background: var(--surface2); }
+
+    .section-header.open { background: var(--surface2); }
+
+    .section-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--text);
+      text-transform: uppercase;
+    }
+
+    .section-count {
+      margin-left: auto;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .chevron {
+      width: 18px;
+      height: 18px;
+      color: var(--text-muted);
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+
+    .section-header.open .chevron { transform: rotate(180deg); }
+
+    .section-body {
+      display: none;
+      padding: 6px 18px 18px;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-body.open { display: block; }
+
+    /* ── FIELD ─────────────────────────────────────────────────── */
+    .field {
+      margin-top: 14px;
+    }
+
+    .field-label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .field-key {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      margin-bottom: 6px;
+    }
+
+    .field input[type="text"],
+    .field textarea {
+      width: 100%;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      font-size: 0.88rem;
+      padding: 9px 12px;
+      font-family: inherit;
+      transition: border-color 0.15s;
+      resize: vertical;
+    }
+
+    .field input[type="text"]:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+
+    .field textarea { min-height: 90px; line-height: 1.5; }
+
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    /* ── TOAST ─────────────────────────────────────────────────── */
+    #toast {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background: var(--green);
+      color: #fff;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.25s, transform 0.25s;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    #toast.show { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- ── HEADER ──────────────────────────────────────────────────── -->
+<div id="header">
+  <h1>Andaman Golf Cup — Content Editor</h1>
+  <div class="divider"></div>
+  <div id="lang-tabs">
+    <button class="lang-tab active" data-lang="en">EN</button>
+    <button class="lang-tab" data-lang="th">TH</button>
+    <button class="lang-tab" data-lang="ru">RU</button>
+  </div>
+  <button id="export-btn">Export content.js</button>
+</div>
+
+<!-- ── MAIN ────────────────────────────────────────────────────── -->
+<div id="main">
+
+  <div class="page-note">
+    <strong>How to use:</strong> Select a language tab, edit any field, then click <strong>Export content.js</strong> to download an updated file. Replace the existing <code>content.js</code> in the website folder and reload the site to see your changes.
+  </div>
+
+  <!-- Sections injected by JS -->
+  <div id="sections"></div>
+
+</div>
+
+<div id="toast">content.js downloaded</div>
+
+<!-- Load current content first -->
+<script src="content.js"></script>
+
+<script>
+/* ================================================================
+   FIELD SCHEMA
+   Each entry: { key, label, multiline? }
+   Grouped into sections.
+================================================================ */
+const SCHEMA = [
+  {
+    id: 'meta',
+    title: 'Meta / SEO',
+    fields: [
+      { key: 'meta.title',       label: 'Page Title (browser tab)' },
+      { key: 'meta.description', label: 'Meta Description (SEO)', multiline: true },
+    ]
+  },
+  {
+    id: 'nav',
+    title: 'Navigation',
+    fields: [
+      { key: 'nav.logo',        label: 'Logo Text' },
+      { key: 'nav.about',       label: 'About Link' },
+      { key: 'nav.agenda',      label: 'Agenda Link' },
+      { key: 'nav.tickets',     label: 'Tickets Link' },
+      { key: 'nav.sponsorship', label: 'Sponsorship Link' },
+      { key: 'nav.register',    label: 'Register Link' },
+      { key: 'nav.cta',         label: 'Nav Button Text' },
+    ]
+  },
+  {
+    id: 'hero',
+    title: 'Hero',
+    fields: [
+      { key: 'hero.eyebrow',      label: 'Eyebrow Text (above headline)' },
+      { key: 'hero.headline',     label: 'Main Headline' },
+      { key: 'hero.subheadline',  label: 'Subheadline', multiline: true },
+      { key: 'hero.date',         label: 'Event Date' },
+      { key: 'hero.proof.label',  label: 'Team Count Label' },
+      { key: 'hero.proof.sub',    label: 'Team Count Sub-label' },
+      { key: 'hero.cta.register', label: 'Register Button' },
+      { key: 'hero.cta.sponsor',  label: 'Sponsor Button' },
+      { key: 'hero.cta.download', label: 'Download Button' },
+    ]
+  },
+  {
+    id: 'about',
+    title: 'About',
+    fields: [
+      { key: 'about.heading',     label: 'Section Heading' },
+      { key: 'about.body',        label: 'Body Text', multiline: true },
+      { key: 'about.stat1.value', label: 'Stat 1 Value' },
+      { key: 'about.stat1.label', label: 'Stat 1 Label' },
+      { key: 'about.stat2.value', label: 'Stat 2 Value' },
+      { key: 'about.stat2.label', label: 'Stat 2 Label' },
+      { key: 'about.stat3.value', label: 'Stat 3 Value' },
+      { key: 'about.stat3.label', label: 'Stat 3 Label' },
+      { key: 'about.stat4.value', label: 'Stat 4 Value' },
+      { key: 'about.stat4.label', label: 'Stat 4 Label' },
+    ]
+  },
+  {
+    id: 'agenda',
+    title: 'Agenda',
+    fields: [
+      { key: 'agenda.heading',      label: 'Section Heading' },
+      { key: 'agenda.item1.time',   label: 'Item 1 — Time' },
+      { key: 'agenda.item1.title',  label: 'Item 1 — Title' },
+      { key: 'agenda.item1.desc',   label: 'Item 1 — Description', multiline: true },
+      { key: 'agenda.item2.time',   label: 'Item 2 — Time' },
+      { key: 'agenda.item2.title',  label: 'Item 2 — Title' },
+      { key: 'agenda.item2.desc',   label: 'Item 2 — Description', multiline: true },
+      { key: 'agenda.item3.time',   label: 'Item 3 — Time' },
+      { key: 'agenda.item3.title',  label: 'Item 3 — Title' },
+      { key: 'agenda.item3.desc',   label: 'Item 3 — Description', multiline: true },
+      { key: 'agenda.item4.time',   label: 'Item 4 — Time' },
+      { key: 'agenda.item4.title',  label: 'Item 4 — Title' },
+      { key: 'agenda.item4.desc',   label: 'Item 4 — Description', multiline: true },
+    ]
+  },
+  {
+    id: 'competition',
+    title: 'Competition',
+    fields: [
+      { key: 'competition.heading',             label: 'Section Heading' },
+      { key: 'competition.format.label',        label: 'Format Label' },
+      { key: 'competition.format.value',        label: 'Format Value' },
+      { key: 'competition.prizes.heading',      label: 'Prizes Heading' },
+      { key: 'competition.prize.individual',    label: 'Prize — Individual' },
+      { key: 'competition.prize.low_gross',     label: 'Prize — Low Gross' },
+      { key: 'competition.prize.flightA',       label: 'Prize — Flight A' },
+      { key: 'competition.prize.flightB',       label: 'Prize — Flight B' },
+      { key: 'competition.prize.flightC',       label: 'Prize — Flight C' },
+      { key: 'competition.prize.lady',          label: 'Prize — Flight Lady' },
+      { key: 'competition.special.heading',     label: 'Special Prizes Heading' },
+      { key: 'competition.special.booby',       label: 'Special Prize — Booby' },
+      { key: 'competition.special.pin',         label: 'Special Prize — Nearest to Pin' },
+      { key: 'competition.eligibility.heading', label: 'Eligibility Heading' },
+      { key: 'competition.eligibility.body',    label: 'Eligibility Body', multiline: true },
+    ]
+  },
+  {
+    id: 'tickets',
+    title: 'Tickets',
+    fields: [
+      { key: 'tickets.heading',           label: 'Section Heading' },
+      { key: 'tickets.subheading',        label: 'Section Subheading' },
+      { key: 'tickets.team.badge',        label: 'VVIP Badge Text' },
+      { key: 'tickets.team.name',         label: 'VVIP Team Name' },
+      { key: 'tickets.team.price',        label: 'VVIP Price' },
+      { key: 'tickets.team.per',          label: 'VVIP Price Per' },
+      { key: 'tickets.team.benefit1',     label: 'VVIP Benefit 1' },
+      { key: 'tickets.team.benefit2',     label: 'VVIP Benefit 2' },
+      { key: 'tickets.team.benefit3',     label: 'VVIP Benefit 3' },
+      { key: 'tickets.team.benefit4',     label: 'VVIP Benefit 4' },
+      { key: 'tickets.team.benefit5',     label: 'VVIP Benefit 5' },
+      { key: 'tickets.team.benefit6',     label: 'VVIP Benefit 6' },
+      { key: 'tickets.team.availability', label: 'VVIP Availability Label' },
+      { key: 'tickets.vip.badge',         label: 'VIP Badge Text' },
+      { key: 'tickets.vip.name',          label: 'VIP Team Name' },
+      { key: 'tickets.vip.price',         label: 'VIP Price' },
+      { key: 'tickets.vip.per',           label: 'VIP Price Per' },
+      { key: 'tickets.vip.benefit1',      label: 'VIP Benefit 1' },
+      { key: 'tickets.vip.benefit2',      label: 'VIP Benefit 2' },
+      { key: 'tickets.vip.benefit3',      label: 'VIP Benefit 3' },
+      { key: 'tickets.vip.benefit4',      label: 'VIP Benefit 4' },
+      { key: 'tickets.vip.benefit5',      label: 'VIP Benefit 5' },
+      { key: 'tickets.vip.benefit6',      label: 'VIP Benefit 6' },
+      { key: 'tickets.vip.availability',  label: 'VIP Availability Label' },
+      { key: 'tickets.pdf.badge',         label: 'PDF Card Badge' },
+      { key: 'tickets.pdf.name',          label: 'PDF Card Name' },
+      { key: 'tickets.pdf.sub',           label: 'PDF Card Subtitle' },
+      { key: 'tickets.pdf.desc',          label: 'PDF Card Description', multiline: true },
+      { key: 'tickets.pdf.cta',           label: 'PDF Download Button' },
+      { key: 'tickets.cta',               label: 'Register Team Button' },
+    ]
+  },
+  {
+    id: 'sponsor',
+    title: 'Sponsorship',
+    fields: [
+      { key: 'sponsor.heading',       label: 'Section Heading' },
+      { key: 'sponsor.subheading',    label: 'Section Subheading' },
+      { key: 'sponsor.body',          label: 'Body Text', multiline: true },
+      { key: 'sponsor.benefit1',      label: 'Benefit 1 Title' },
+      { key: 'sponsor.benefit1.desc', label: 'Benefit 1 Description', multiline: true },
+      { key: 'sponsor.benefit2',      label: 'Benefit 2 Title' },
+      { key: 'sponsor.benefit2.desc', label: 'Benefit 2 Description', multiline: true },
+      { key: 'sponsor.benefit3',      label: 'Benefit 3 Title' },
+      { key: 'sponsor.benefit3.desc', label: 'Benefit 3 Description', multiline: true },
+      { key: 'sponsor.tier1.badge',   label: 'Tier 1 Badge' },
+      { key: 'sponsor.tier1.price',   label: 'Sponsor Price' },
+      { key: 'sponsor.tier1.slots',   label: 'Sponsor Slots Available' },
+      { key: 'sponsor.tier1.b1',      label: 'Tier 1 Benefit 1' },
+      { key: 'sponsor.tier1.b2',      label: 'Tier 1 Benefit 2' },
+      { key: 'sponsor.tier1.b3',      label: 'Tier 1 Benefit 3' },
+      { key: 'sponsor.cta',           label: 'Sponsor CTA Button' },
+    ]
+  },
+  {
+    id: 'charity',
+    title: 'About ANRCF',
+    fields: [
+      { key: 'charity.heading',      label: 'Section Heading' },
+      { key: 'charity.body',         label: 'Body Text', multiline: true },
+      { key: 'charity.stat1.value',  label: 'Stat 1 Value' },
+      { key: 'charity.stat1.label',  label: 'Stat 1 Label' },
+      { key: 'charity.stat2.value',  label: 'Stat 2 Value' },
+      { key: 'charity.stat2.label',  label: 'Stat 2 Label' },
+      { key: 'charity.stat3.value',  label: 'Stat 3 Value' },
+      { key: 'charity.stat3.label',  label: 'Stat 3 Label' },
+      { key: 'charity.link',         label: 'Website Link Text' },
+    ]
+  },
+  {
+    id: 'past',
+    title: 'Past Events',
+    fields: [
+      { key: 'past.heading',    label: 'Section Heading' },
+      { key: 'past.subheading', label: 'Section Subheading', multiline: true },
+      { key: 'past.card1',      label: 'Card 1 Caption', multiline: true },
+      { key: 'past.card2',      label: 'Card 2 Caption', multiline: true },
+      { key: 'past.card3',      label: 'Card 3 Caption', multiline: true },
+      { key: 'past.card4',      label: 'Card 4 Caption', multiline: true },
+      { key: 'past.card5',      label: 'Card 5 Caption', multiline: true },
+    ]
+  },
+  {
+    id: 'register',
+    title: 'Registration Form',
+    fields: [
+      { key: 'register.heading',          label: 'Section Heading' },
+      { key: 'register.subheading',       label: 'Section Subheading', multiline: true },
+      { key: 'register.name',             label: 'Name Field Label' },
+      { key: 'register.org',              label: 'Organisation Field Label' },
+      { key: 'register.email',            label: 'Email Field Label' },
+      { key: 'register.phone',            label: 'Phone Field Label' },
+      { key: 'register.teamtype',         label: 'Category Field Label' },
+      { key: 'register.teamtype.team',    label: 'Category Option — VVIP' },
+      { key: 'register.teamtype.vip',     label: 'Category Option — VIP' },
+      { key: 'register.teamtype.sponsor', label: 'Category Option — Sponsor' },
+      { key: 'register.teamcount',        label: 'Number of Teams Field Label' },
+      { key: 'register.notes',            label: 'Notes Field Label' },
+      { key: 'register.submit',           label: 'Submit Button' },
+      { key: 'register.required',         label: 'Required Fields Note' },
+      { key: 'register.err.name',         label: 'Error — Name' },
+      { key: 'register.err.email',        label: 'Error — Email' },
+      { key: 'register.err.phone',        label: 'Error — Phone' },
+      { key: 'register.err.type',         label: 'Error — Category' },
+    ]
+  },
+  {
+    id: 'confirm',
+    title: 'Confirmation',
+    fields: [
+      { key: 'confirm.heading',      label: 'Heading' },
+      { key: 'confirm.body',         label: 'Body Text', multiline: true },
+      { key: 'confirm.bank.heading', label: 'Bank Details Heading' },
+      { key: 'confirm.bank.details', label: 'Bank Account Details', multiline: true },
+      { key: 'confirm.bank.note',    label: 'Bank Details Note', multiline: true },
+    ]
+  },
+  {
+    id: 'footer',
+    title: 'Footer',
+    fields: [
+      { key: 'footer.tagline',         label: 'Tagline', multiline: true },
+      { key: 'footer.links.heading',   label: 'Quick Links Heading' },
+      { key: 'footer.contact.heading', label: 'Contact Heading' },
+      { key: 'footer.contact.email',   label: 'Contact Email' },
+      { key: 'footer.contact.phone',   label: 'Contact Phone' },
+      { key: 'footer.copyright',       label: 'Copyright Notice' },
+    ]
+  },
+];
+
+/* ================================================================
+   STATE
+================================================================ */
+let activeLang = 'en';
+
+// Deep copy of all content — edits stored here, not in window.SITE_CONTENT
+const data = {
+  en: Object.assign({}, window.SITE_CONTENT && window.SITE_CONTENT.en || {}),
+  th: Object.assign({}, window.SITE_CONTENT && window.SITE_CONTENT.th || {}),
+  ru: Object.assign({}, window.SITE_CONTENT && window.SITE_CONTENT.ru || {}),
+};
+
+/* ================================================================
+   BUILD UI
+================================================================ */
+function buildSections() {
+  const container = document.getElementById('sections');
+  container.innerHTML = '';
+
+  SCHEMA.forEach(section => {
+    const el = document.createElement('div');
+    el.className = 'section';
+    el.dataset.section = section.id;
+
+    const header = document.createElement('div');
+    header.className = 'section-header';
+    header.innerHTML = `
+      <svg class="chevron" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+      </svg>
+      <span class="section-title">${section.title}</span>
+      <span class="section-count">${section.fields.length} fields</span>
+    `;
+
+    const body = document.createElement('div');
+    body.className = 'section-body';
+    body.dataset.sectionBody = section.id;
+
+    section.fields.forEach(field => {
+      body.appendChild(buildField(field));
+    });
+
+    header.addEventListener('click', () => {
+      const isOpen = header.classList.contains('open');
+      header.classList.toggle('open', !isOpen);
+      body.classList.toggle('open', !isOpen);
+    });
+
+    el.appendChild(header);
+    el.appendChild(body);
+    container.appendChild(el);
+  });
+}
+
+function buildField(field) {
+  const wrap = document.createElement('div');
+  wrap.className = 'field';
+
+  const label = document.createElement('label');
+  label.className = 'field-label';
+  label.textContent = field.label;
+
+  const keySpan = document.createElement('span');
+  keySpan.className = 'field-key';
+  keySpan.textContent = field.key;
+
+  const currentVal = data[activeLang][field.key] || '';
+
+  let input;
+  if (field.multiline) {
+    input = document.createElement('textarea');
+    input.rows = 3;
+  } else {
+    input = document.createElement('input');
+    input.type = 'text';
+  }
+  input.value = currentVal;
+  input.dataset.key = field.key;
+  input.addEventListener('input', e => {
+    data[activeLang][field.key] = e.target.value;
+  });
+
+  wrap.appendChild(label);
+  wrap.appendChild(keySpan);
+  wrap.appendChild(input);
+  return wrap;
+}
+
+function populateFields() {
+  // Update all existing inputs with values for active lang
+  document.querySelectorAll('[data-key]').forEach(el => {
+    const key = el.dataset.key;
+    el.value = data[activeLang][key] || '';
+  });
+}
+
+/* ================================================================
+   LANGUAGE SWITCHING
+================================================================ */
+document.getElementById('lang-tabs').addEventListener('click', e => {
+  const btn = e.target.closest('.lang-tab');
+  if (!btn) return;
+  activeLang = btn.dataset.lang;
+  document.querySelectorAll('.lang-tab').forEach(t => t.classList.toggle('active', t === btn));
+  populateFields();
+});
+
+/* ================================================================
+   EXPORT
+================================================================ */
+function escape(str) {
+  // Escape backslashes, then single quotes, preserve actual newlines as \n literal
+  return str
+    .replace(/\\/g, '\\\\')
+    .replace(/'/g, "\\'")
+    .replace(/\r?\n/g, '\\n');
+}
+
+function pad(key, val, indent) {
+  // Align values nicely — key padded to ~40 chars
+  const k = `'${key}':`;
+  return `${indent}${k.padEnd(42)} '${escape(val)}',`;
+}
+
+function buildSection(langData, keys, comment, indent) {
+  const lines = [`\n${indent}// ── ${comment} ──────────────────────────────────────────────────────`];
+  keys.forEach(key => {
+    const val = langData[key] !== undefined ? langData[key] : '';
+    lines.push(pad(key, val, indent));
+  });
+  return lines.join('\n');
+}
+
+function generateContentJS() {
+  const INDENT = '    ';
+
+  const sections = {
+    'META':              ['meta.title', 'meta.description'],
+    'NAVIGATION':        ['nav.logo', 'nav.about', 'nav.agenda', 'nav.tickets', 'nav.sponsorship', 'nav.register', 'nav.cta'],
+    'HERO':              ['hero.eyebrow', 'hero.headline', 'hero.subheadline', 'hero.date', 'hero.proof.label', 'hero.proof.sub', 'hero.cta.register', 'hero.cta.sponsor', 'hero.cta.download'],
+    'ABOUT':             ['about.heading', 'about.body', 'about.stat1.value', 'about.stat1.label', 'about.stat2.value', 'about.stat2.label', 'about.stat3.value', 'about.stat3.label', 'about.stat4.value', 'about.stat4.label'],
+    'AGENDA':            ['agenda.heading', 'agenda.item1.time', 'agenda.item1.title', 'agenda.item1.desc', 'agenda.item2.time', 'agenda.item2.title', 'agenda.item2.desc', 'agenda.item3.time', 'agenda.item3.title', 'agenda.item3.desc', 'agenda.item4.time', 'agenda.item4.title', 'agenda.item4.desc'],
+    'COMPETITION':       ['competition.heading', 'competition.format.label', 'competition.format.value', 'competition.prizes.heading', 'competition.prize.individual', 'competition.prize.low_gross', 'competition.prize.flightA', 'competition.prize.flightB', 'competition.prize.flightC', 'competition.prize.lady', 'competition.special.heading', 'competition.special.booby', 'competition.special.pin', 'competition.eligibility.heading', 'competition.eligibility.body'],
+    'TICKETS':           ['tickets.heading', 'tickets.subheading', 'tickets.team.badge', 'tickets.team.name', 'tickets.team.price', 'tickets.team.per', 'tickets.team.benefit1', 'tickets.team.benefit2', 'tickets.team.benefit3', 'tickets.team.benefit4', 'tickets.team.benefit5', 'tickets.team.benefit6', 'tickets.team.availability', 'tickets.vip.badge', 'tickets.vip.name', 'tickets.vip.price', 'tickets.vip.per', 'tickets.vip.benefit1', 'tickets.vip.benefit2', 'tickets.vip.benefit3', 'tickets.vip.benefit4', 'tickets.vip.benefit5', 'tickets.vip.benefit6', 'tickets.vip.availability', 'tickets.pdf.badge', 'tickets.pdf.name', 'tickets.pdf.sub', 'tickets.pdf.desc', 'tickets.pdf.cta', 'tickets.cta'],
+    'SPONSORSHIP':       ['sponsor.heading', 'sponsor.subheading', 'sponsor.body', 'sponsor.benefit1', 'sponsor.benefit2', 'sponsor.benefit3', 'sponsor.benefit1.desc', 'sponsor.benefit2.desc', 'sponsor.benefit3.desc', 'sponsor.tier1.badge', 'sponsor.tier1.price', 'sponsor.tier1.slots', 'sponsor.tier1.b1', 'sponsor.tier1.b2', 'sponsor.tier1.b3', 'sponsor.cta'],
+    'ABOUT ANRCF':       ['charity.heading', 'charity.body', 'charity.stat1.value', 'charity.stat1.label', 'charity.stat2.value', 'charity.stat2.label', 'charity.stat3.value', 'charity.stat3.label', 'charity.link'],
+    'PAST EVENTS':       ['past.heading', 'past.subheading', 'past.card1', 'past.card2', 'past.card3', 'past.card4', 'past.card5'],
+    'REGISTRATION FORM': ['register.heading', 'register.subheading', 'register.name', 'register.org', 'register.email', 'register.phone', 'register.teamtype', 'register.teamtype.team', 'register.teamtype.vip', 'register.teamtype.sponsor', 'register.teamcount', 'register.notes', 'register.submit', 'register.required', 'register.err.name', 'register.err.email', 'register.err.phone', 'register.err.type'],
+    'CONFIRMATION':      ['confirm.heading', 'confirm.body', 'confirm.bank.heading', 'confirm.bank.details', 'confirm.bank.note'],
+    'FOOTER':            ['footer.tagline', 'footer.links.heading', 'footer.contact.heading', 'footer.contact.email', 'footer.contact.phone', 'footer.copyright'],
+  };
+
+  function langBlock(langCode, langLabel, langData) {
+    let body = '';
+    Object.entries(sections).forEach(([name, keys]) => {
+      body += buildSection(langData, keys, name, INDENT);
+      body += '\n';
+    });
+    return `
+  /* ================================================================
+     ${langLabel}
+  ================================================================ */
+  ${langCode}: {
+${body}
+  }`;
+  }
+
+  const header = `/**
+ * ╔══════════════════════════════════════════════════════════════╗
+ * ║           ANDAMAN GOLF CUP 2026 — CONTENT FILE             ║
+ * ╠══════════════════════════════════════════════════════════════╣
+ * ║  Edit this file to update all website text.                ║
+ * ║  Three languages: en (English), th (Thai), ru (Russian)    ║
+ * ║  After editing, save and reload the website to see changes.║
+ * ╚══════════════════════════════════════════════════════════════╝
+ *
+ * HOW TO EDIT:
+ *   1. Find the section you want to change (e.g. "HERO", "AGENDA")
+ *   2. Change the text INSIDE the quotes on the right side
+ *   3. Do NOT change the key names on the left side
+ *   4. Save the file
+ *
+ * IMAGES:
+ *   Replace hero.png with a new file of the same name.
+ *   Gallery images: replace photo1.jpg, photo2.jpg, etc.
+ */
+
+window.SITE_CONTENT = {`;
+
+  const enBlock  = langBlock('en', 'ENGLISH', data.en);
+  const thBlock  = langBlock('th', 'THAI (ภาษาไทย)', data.th);
+  const ruBlock  = langBlock('ru', 'RUSSIAN (Русский)', data.ru);
+
+  return `${header}\n${enBlock},\n${thBlock},\n${ruBlock}\n\n};\n`;
+}
+
+function downloadFile(filename, content) {
+  const blob = new Blob([content], { type: 'text/javascript;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+document.getElementById('export-btn').addEventListener('click', () => {
+  const js = generateContentJS();
+  downloadFile('content.js', js);
+  showToast('content.js downloaded');
+});
+
+/* ================================================================
+   INIT
+================================================================ */
+buildSections();
+
+// Open first section by default
+const firstHeader = document.querySelector('.section-header');
+const firstBody   = document.querySelector('.section-body');
+if (firstHeader && firstBody) {
+  firstHeader.classList.add('open');
+  firstBody.classList.add('open');
+}
+</script>
+</body>
+</html>
