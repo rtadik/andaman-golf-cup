@@ -215,7 +215,8 @@ if (registrationForm) {
       const notes     = document.getElementById('reg-notes');
       const org       = document.getElementById('reg-org');
 
-      emailjs.send('service_xl453kq', 'template_yc5jg6k', {
+      emailjs.send('service_xl453kq', 'template_vpibzkk', {
+        to_email:     'ruttherick@gmail.com',
         from_name:    name.value.trim(),
         from_email:   email.value.trim(),
         organisation: org       ? org.value.trim()       : '',
@@ -223,13 +224,14 @@ if (registrationForm) {
         team_type:    teamType.options[teamType.selectedIndex].text,
         team_count:   teamCount ? teamCount.value        : '1',
         notes:        notes     ? notes.value.trim()     : '',
-      }).catch(() => {
-        // Silent fail — registration still shows as received to the user
+      }).catch((err) => {
+        console.error('EmailJS error:', err);
       }).finally(() => {
         registrationForm.classList.add('hidden');
         const confirmation = document.getElementById('confirmation');
         if (confirmation) {
           confirmation.classList.remove('hidden');
+          confirmation.classList.add('visible');
           confirmation.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
       });
@@ -298,30 +300,111 @@ if (registrationForm) {
 
 /* =============================================================================
    MODULE 6 — GALLERY MODAL / LIGHTBOX
-   Click an image in the Past Events section to open a detail popup.
-   Detail text for each card is set via past.card*.detail keys in content.js.
+
+   To add extra photos per card, add filenames to the arrays below.
+   null = placeholder slot (shows a labeled placeholder until you add the file).
+
+   Example — to add a real photo to card 1:
+     Change:  1: ['past-jazz-for-king.webp', null, null]
+     To:      1: ['past-jazz-for-king.webp', 'jazz-photo-2.jpg', null]
 ============================================================================= */
 
+const GALLERY_IMAGES = {
+  1: ['past-jazz-for-king.webp',    null, null],   // card 1 — Jazz for the King
+  2: ['past-plant.webp',            null, null],   // card 2 — Reforestation
+  3: ['past-turtle-saving.webp', 'card 3.1.webp', 'card3.2.webp', 'card 3.3.webp'],   // card 3 — Turtle / Cleaning Day
+  4: ['past-maya-bay-mooring.jpg',  null, null],   // card 4 — Maya Bay Mooring
+  5: ['past-turtle-ambassadors.webp', null, null], // card 5 — Ambassador Release
+};
+
 (function initGalleryModal() {
-  const overlay   = document.getElementById('gallery-modal');
-  const closeBtn  = document.getElementById('gallery-modal-close');
-  const modalImg  = document.getElementById('gallery-modal-img');
+  const overlay     = document.getElementById('gallery-modal');
+  const closeBtn    = document.getElementById('gallery-modal-close');
+  const modalImg    = document.getElementById('gallery-modal-img');
   const modalTitle  = document.getElementById('gallery-modal-title');
   const modalDetail = document.getElementById('gallery-modal-detail');
+  const thumbsWrap  = document.getElementById('gallery-modal-thumbs');
 
   if (!overlay) return;
 
+  let currentImages = [];
+  let currentIndex  = 0;
+
+  /* ── Switch the main image to slot i ── */
+  function showSlot(i) {
+    currentIndex = i;
+    const src = currentImages[i];
+
+    if (src) {
+      modalImg.src = src;
+      modalImg.style.display = '';
+      modalImg.closest('.gallery-modal-img-wrap').classList.remove('showing-placeholder');
+    } else {
+      modalImg.src = '';
+      modalImg.style.display = 'none';
+      modalImg.closest('.gallery-modal-img-wrap').classList.add('showing-placeholder');
+      // Update placeholder label with the suggested filename
+      const label = modalImg.closest('.gallery-modal-img-wrap').querySelector('.modal-main-placeholder-label');
+      if (label) label.textContent = suggestedName(i);
+    }
+
+    // Update active thumb
+    thumbsWrap.querySelectorAll('.gallery-thumb').forEach((th, j) => {
+      th.classList.toggle('active', j === i);
+    });
+  }
+
+  /* ── Generate a suggested filename for a placeholder slot ── */
+  function suggestedName(slotIndex) {
+    return `event-photo-${slotIndex + 1}.jpg`;
+  }
+
+  /* ── Build the thumbnail strip ── */
+  function buildThumbs(cardIndex) {
+    thumbsWrap.innerHTML = '';
+    currentImages.forEach((src, i) => {
+      const thumb = document.createElement('div');
+      thumb.className = 'gallery-thumb' + (i === 0 ? ' active' : '');
+
+      if (src) {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = '';
+        img.loading = 'lazy';
+        thumb.appendChild(img);
+      } else {
+        // Placeholder thumbnail
+        thumb.classList.add('gallery-thumb-placeholder');
+        const label = document.createElement('span');
+        label.textContent = suggestedName(i);
+        thumb.appendChild(label);
+        thumb.title = `Replace: add file "${suggestedName(i)}" and update GALLERY_IMAGES in script.js`;
+      }
+
+      thumb.addEventListener('click', () => showSlot(i));
+      thumbsWrap.appendChild(thumb);
+    });
+  }
+
+  /* ── Open modal ── */
   function openModal(cardIndex) {
     const lang = localStorage.getItem('agc_lang') || 'th';
     const t    = (window.SITE_CONTENT || {})[lang] || {};
 
-    const card   = document.querySelector(`[data-card-index="${cardIndex}"]`);
-    const imgEl  = card ? card.querySelector('img') : null;
+    currentImages = (GALLERY_IMAGES[cardIndex] || []).slice();
 
-    modalImg.src = imgEl ? imgEl.src : '';
-    modalImg.alt = imgEl ? imgEl.alt : '';
+    // Fallback: use the card's img src if config missing
+    if (!currentImages.length) {
+      const card  = document.querySelector(`[data-card-index="${cardIndex}"]`);
+      const imgEl = card ? card.querySelector('img') : null;
+      if (imgEl) currentImages = [imgEl.src];
+    }
+
     modalTitle.textContent  = t[`past.card${cardIndex}`] || '';
     modalDetail.textContent = t[`past.card${cardIndex}.detail`] || '';
+
+    buildThumbs(cardIndex);
+    showSlot(0);
 
     overlay.classList.add('active');
     overlay.setAttribute('aria-hidden', 'false');
@@ -332,14 +415,17 @@ if (registrationForm) {
     overlay.classList.remove('active');
     overlay.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    // Reset main image display in case a placeholder was showing
+    modalImg.style.display = '';
+    modalImg.closest('.gallery-modal-img-wrap').classList.remove('showing-placeholder');
   }
 
-  // Attach click handlers to each gallery image wrapper
+  /* ── Card click handlers ── */
   document.querySelectorAll('.gallery-card').forEach(card => {
     const idx     = card.getAttribute('data-card-index');
     const imgWrap = card.querySelector('.gallery-img-wrap');
     if (imgWrap && idx) {
-      imgWrap.addEventListener('click', () => openModal(idx));
+      imgWrap.addEventListener('click', () => openModal(Number(idx)));
     }
   });
 
