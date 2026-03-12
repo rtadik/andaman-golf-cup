@@ -7,28 +7,38 @@
 - **Branding:** Green and blue tones, clean professional aesthetic, nature photography
 
 ## Event Overview
+- **Official Name:** Andaman Natural Resources Conservation Charity Golf Tournament 2026
 - **Date:** May 25, 2026
-- **Time:** 1:00 PM – 6:00 PM (golf), then dinner party from ~6:00–6:30 PM onward
-- **Location:** Military golf base in Bangkok (specific name/details TBD)
-- **Nature:** VIP networking golf event — attendees are joining for both golf AND high-net-worth connections
+- **Time:** 1:00 PM – 6:00 PM (golf), then gala banquet dinner from ~6:00 PM onward
+- **Location:** สนามกอล์ฟ ศูนย์พัฒนากีฬากองทัพบก รามอินทรา / Royal Thai Army Sports Center Ramindra, Bangkok
+- **Nature:** Charity golf to fund ANRCF Youth Conservation Fund
 
 ## Agenda
 1. 1:00 PM — Opening/announcement meeting
-2. News conference
-3. Golf game begins
-4. ~6:00–6:30 PM — Dinner party (combining all attendees)
+2. Press conference
+3. Golf tournament begins (team format)
+4. ~6:00 PM — Gala banquet dinner (all participants)
 
-## Ticket Types
-| Type | Price (THB) | Team Size | Target Count |
-|------|-------------|-----------|--------------|
-| VVIP | 50,000 | 4 people | Smaller number |
-| VIP  | 30,000 | 4 people | ~20–40 teams |
+## Registration
+| Type | Price (THB) | Team Size | Total |
+|------|-------------|-----------|-------|
+| Tournament Team | 50,000 | 4 people | 30 teams max |
 
-## Sponsorship
-- **Minimum:** 200,000 THB per sponsor
-- **Slots:** Maximum 10 sponsors only
+## Sponsorship Tiers
+| Tier | Price (THB) | Slots |
+|------|-------------|-------|
+| Platinum | 50,000 | 2 |
+| Gold | 25,000 | 4 |
+| Silver | 10,000 | 10 |
+| Hole Sponsor | 5,000 | 18 (one per hole) |
+
 - **Payment:** Direct bank transfer to ANRCF Thailand bank account
 - **Target sponsors:** Bangkok/Phuket hotels, Thailand Tourism Authority, similar organizations
+
+## Financial Summary (from official project document)
+- **Total projected revenue:** 1,990,000 THB
+- **Total projected expenses:** 1,320,000 THB
+- **Net to Youth Conservation Fund:** 670,000 THB
 
 ## Target Audience
 - High-net-worth individuals
@@ -52,10 +62,12 @@
 - **Event Name:** TBD — needs to be decided
 
 ## Open Items
-- [x] Official event name: **Andaman Golf Cup 2026** (working title)
+- [x] Official event name: **Andaman Natural Resources Conservation Charity Golf Tournament 2026**
 - [x] Domain: **golf.anrcf.com**
-- [ ] Military golf base name and address
+- [x] Venue: Royal Thai Army Sports Center Ramindra (สนามกอล์ฟ ศูนย์พัฒนากีฬากองทัพบก รามอินทรา), Bangkok
+- [x] Sponsorship tiers: Platinum/Gold/Silver/Hole (confirmed from project document)
+- [x] Registration: 30 teams × ฿50,000
+- [ ] Venue full address
 - [ ] Specific sponsor logos / names (when confirmed)
 - [ ] Real photos (venue, past events)
 - [ ] Bank account details for transfer instructions
-- [ ] Exact number of VVIP vs VIP team slots
