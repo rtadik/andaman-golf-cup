@@ -241,9 +241,30 @@ small {
   text-decoration: none;
   letter-spacing: 0.02em;
   line-height: 1.2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.nav-logo span {
+.nav-logo-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.nav-logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-logo-text span:first-child {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.nav-logo-sub {
   font-size: 10px;
   font-weight: 400;
   color: var(--gold);
