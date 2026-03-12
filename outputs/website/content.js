@@ -40,7 +40,7 @@ window.SITE_CONTENT = {
 
     // ── HERO ──────────────────────────────────────────────────────
     'hero.eyebrow':      'ANRCF Charity Event · Bangkok, Thailand',
-    'hero.headline':     'Andaman Charity Golf',
+    'hero.headline':     'Andaman Golf 2026',
     'hero.subheadline':  'Where Thailand\'s most influential voices gather for golf, purpose, and connection.',
     'hero.date':         '25 May 2026 · Bangkok, Thailand',
     'hero.proof.label':  '35 Teams — Limited Places',
@@ -68,7 +68,7 @@ window.SITE_CONTENT = {
     'agenda.item1.desc':   'Collect your Score Card, enjoy a welcome lunch, and meet your fellow participants before the tournament begins.',
     'agenda.item2.time':   '12:00 PM',
     'agenda.item2.title':  'Golf Tournament Begins',
-    'agenda.item2.desc':   'The Andaman Charity Golf tournament commences. Teams compete in a team format across the championship course.',
+    'agenda.item2.desc':   'The Andaman Golf 2026 tournament commences. Teams compete in a team format across the championship course.',
     'agenda.item3.time':   '6:00 PM',
     'agenda.item3.title':  'Gala Dinner — Phu Chomphon Hall',
     'agenda.item3.desc':   'An exclusive gala dinner at Phu Chomphon Hall, bringing all participants together for an evening of celebration and elite networking.',
@@ -219,7 +219,7 @@ window.SITE_CONTENT = {
 
     // ── HERO ──────────────────────────────────────────────────────
     'hero.eyebrow':      'อีเว้นท์การกุศล ANRCF · กรุงเทพมหานคร ประเทศไทย',
-    'hero.headline':     'อันดามันกอล์ฟการกุศล',
+    'hero.headline':     'อันดามันกอล์ฟ 2026',
     'hero.subheadline':  'สถานที่ที่บุคคลผู้ทรงอิทธิพลที่สุดของประเทศไทยมาพบปะกัน เพื่อกอล์ฟ เพื่อเจตนารมณ์ และเพื่อสายสัมพันธ์อันยิ่งใหญ่',
     'hero.date':         '25 พฤษภาคม 2569 · กรุงเทพมหานคร ประเทศไทย',
     'hero.proof.label':  '35 ทีมเท่านั้น',
@@ -247,7 +247,7 @@ window.SITE_CONTENT = {
     'agenda.item1.desc':   'ลงทะเบียนรับ Score Card พร้อมรับประทานอาหารกลางวันต้อนรับก่อนเริ่มการแข่งขัน',
     'agenda.item2.time':   '12:00 น.',
     'agenda.item2.title':  'เริ่มการแข่งขันกอล์ฟ',
-    'agenda.item2.desc':   'อันดามันกอล์ฟการกุศลเริ่มต้นอย่างเป็นทางการ ทีมต่าง ๆ แข่งขันในรูปแบบทีมบนสนามแชมเปี้ยนชิพ',
+    'agenda.item2.desc':   'อันดามันกอล์ฟ 2026 เริ่มต้นอย่างเป็นทางการ ทีมต่าง ๆ แข่งขันในรูปแบบทีมบนสนามแชมเปี้ยนชิพ',
     'agenda.item3.time':   '18:00 น.',
     'agenda.item3.title':  'งานเลี้ยงสังสรรค์ ณ ห้องพู่จอมพล',
     'agenda.item3.desc':   'งานเลี้ยงสังสรรค์อันทรงเกียรติ ณ ห้องพู่จอมพล รวมผู้เข้าร่วมทุกท่านสู่ค่ำคืนแห่งการเฉลิมฉลองและสร้างเครือข่าย',
@@ -398,7 +398,7 @@ window.SITE_CONTENT = {
 
     // ── HERO ──────────────────────────────────────────────────────
     'hero.eyebrow':      'Благотворительное мероприятие ANRCF · Бангкок, Таиланд',
-    'hero.headline':     'Благотворительный гольф Андаман',
+    'hero.headline':     'Andaman Golf 2026',
     'hero.subheadline':  'Место встречи самых влиятельных людей Таиланда — в атмосфере гольфа, единой цели и подлинного партнёрства.',
     'hero.date':         '25 мая 2026 · Бангкок, Таиланд',
     'hero.proof.label':  'Только 35 команд',
@@ -426,7 +426,7 @@ window.SITE_CONTENT = {
     'agenda.item1.desc':   'Получите карточку счёта, насладитесь приветственным обедом и познакомьтесь с другими участниками перед началом турнира.',
     'agenda.item2.time':   '12:00',
     'agenda.item2.title':  'Старт гольф-турнира',
-    'agenda.item2.desc':   'Благотворительный гольф Андаман официально стартует. Команды соревнуются в командном формате на чемпионском поле.',
+    'agenda.item2.desc':   'Andaman Golf 2026 официально стартует. Команды соревнуются в командном формате на чемпионском поле.',
     'agenda.item3.time':   '18:00',
     'agenda.item3.title':  'Торжественный ужин — зал Пху Чомпон',
     'agenda.item3.desc':   'Торжественный ужин в зале Пху Чомпон объединяет всех участников для вечера праздника и элитного нетворкинга.',
