@@ -309,7 +309,7 @@
           <p data-i18n="sponsor.subheading">Align your brand with Thailand's most exclusive charity golf event.</p>
         </div>
         <p class="sponsor-body" data-i18n="sponsor.body">Sponsoring the tournament places your organisation in front of Thailand's most influential decision-makers while directly funding youth conservation education. Choose the tier that suits your level of support.</p>
-        <div class="sponsor-benefits fade-in-up">
+        <div class="sponsor-benefits fade-in-up" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:48px 0;">
 
           <div class="sponsor-benefit-item">
             <div class="sponsor-icon">◈</div>
@@ -330,6 +330,26 @@
           </div>
 
         </div>
+
+        <!-- 3-column benefits (test) -->
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:48px 0;">
+          <div class="sponsor-benefit-item">
+            <div class="sponsor-icon">◈</div>
+            <h4 data-i18n="sponsor.benefit1">Premier Brand Exposure</h4>
+            <p data-i18n="sponsor.benefit1.desc">Prominent logo placement across all event materials, banners, and digital assets.</p>
+          </div>
+          <div class="sponsor-benefit-item">
+            <div class="sponsor-icon">◈</div>
+            <h4 data-i18n="sponsor.benefit2">Elite Networking Access</h4>
+            <p data-i18n="sponsor.benefit2.desc">Direct access to 200+ high-net-worth individuals, government officials, and business leaders.</p>
+          </div>
+          <div class="sponsor-benefit-item">
+            <div class="sponsor-icon">◈</div>
+            <h4 data-i18n="sponsor.benefit3">VIP Gala Presence</h4>
+            <p data-i18n="sponsor.benefit3.desc">Reserved VIP table at the exclusive gala dinner and recognition during the ceremony.</p>
+          </div>
+        </div>
+
         <div class="sponsor-tiers fade-in-up">
 
           <div class="sponsor-tier-card sponsor-tier-platinum">
@@ -404,35 +424,35 @@
         </div>
         <div class="gallery-grid">
 
-          <figure class="gallery-card fade-in-up">
+          <figure class="gallery-card fade-in-up" data-card-index="1">
             <div class="gallery-img-wrap">
               <img src="past-jazz-for-king.webp" alt="Jazz for the King — ANRCF Charity Gala Concert" loading="lazy">
             </div>
             <figcaption class="gallery-caption" data-i18n="past.card1">Jazz for the King — ANRCF Charity Gala Concert in Partnership with the Tourism Authority of Thailand</figcaption>
           </figure>
 
-          <figure class="gallery-card fade-in-up">
+          <figure class="gallery-card fade-in-up" data-card-index="2">
             <div class="gallery-img-wrap">
               <img src="past-plant.webp" alt="Unite Hearts, Protect the Forest — National Reforestation Campaign" loading="lazy">
             </div>
             <figcaption class="gallery-caption" data-i18n="past.card2">Unite Hearts, Protect the Forest — National Reforestation Campaign Honouring His Majesty the King</figcaption>
           </figure>
 
-          <figure class="gallery-card fade-in-up">
+          <figure class="gallery-card fade-in-up" data-card-index="3">
             <div class="gallery-img-wrap">
               <img src="past-turtle-saving.webp" alt="Return Sea Turtles to the Andaman — Big Cleaning Day, Phuket" loading="lazy">
             </div>
             <figcaption class="gallery-caption" data-i18n="past.card3">Return Sea Turtles to the Andaman Sea — Big Cleaning Day, Sirinath National Park, Phuket</figcaption>
           </figure>
 
-          <figure class="gallery-card fade-in-up">
+          <figure class="gallery-card fade-in-up" data-card-index="4">
             <div class="gallery-img-wrap">
               <img src="past-maya-bay-mooring.jpg" alt="Maya Bay Mooring Project — Protecting Phi Phi Islands Coral Reefs" loading="lazy">
             </div>
             <figcaption class="gallery-caption" data-i18n="past.card4">Maya Bay Mooring Project — 10-Agency Coalition to Protect Phi Phi Islands' Coral Reefs from Anchor Damage</figcaption>
           </figure>
 
-          <figure class="gallery-card fade-in-up">
+          <figure class="gallery-card fade-in-up" data-card-index="5">
             <div class="gallery-img-wrap">
               <img src="past-turtle-ambassadors.webp" alt="International Sea Turtle Release — Ambassadors from 10 Countries" loading="lazy">
             </div>
@@ -572,7 +592,35 @@ Amount: As per selected team category</span>
     </div>
   </footer>
 
+  <!-- ============================================================
+       PAST EVENTS MODAL / LIGHTBOX
+  ============================================================ -->
+  <div id="gallery-modal" class="gallery-modal-overlay" aria-modal="true" role="dialog" aria-hidden="true">
+    <div class="gallery-modal-inner">
+      <button class="gallery-modal-close" id="gallery-modal-close" aria-label="Close">&times;</button>
+
+      <!-- Left: main image + thumbnails + nav -->
+      <div class="gallery-modal-left">
+        <div class="gallery-modal-img-wrap">
+          <img id="gallery-modal-img" src="" alt="">
+          <button class="gallery-modal-nav gallery-modal-prev" id="gallery-modal-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-modal-nav gallery-modal-next" id="gallery-modal-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-modal-counter" id="gallery-modal-counter">1 / 1</div>
+        </div>
+        <div class="gallery-modal-thumbs" id="gallery-modal-thumbs"></div>
+      </div>
+
+      <!-- Right: title + detail text -->
+      <div class="gallery-modal-content">
+        <h3 id="gallery-modal-title"></h3>
+        <p id="gallery-modal-detail"></p>
+      </div>
+    </div>
+  </div>
+
   <script src="content.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>emailjs.init({ publicKey: 'bw2RsU8YXuN_mqmQ6' });</script>
   <script src="script.js"></script>
 </body>
 </html>

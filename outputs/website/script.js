@@ -206,15 +206,33 @@ if (registrationForm) {
       if (errType) errType.classList.remove('visible');
     }
 
-    // ---- Submit: show confirmation block ------------------------------------
+    // ---- Submit: send email + show confirmation block -----------------------
     if (valid) {
-      registrationForm.classList.add('hidden');
+      const submitBtn = registrationForm.querySelector('button[type="submit"], input[type="submit"]');
+      if (submitBtn) submitBtn.disabled = true;
 
-      const confirmation = document.getElementById('confirmation');
-      if (confirmation) {
-        confirmation.classList.remove('hidden');
-        confirmation.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
+      const teamCount = document.getElementById('reg-count');
+      const notes     = document.getElementById('reg-notes');
+      const org       = document.getElementById('reg-org');
+
+      emailjs.send('service_xl453kq', 'template_yc5jg6k', {
+        from_name:    name.value.trim(),
+        from_email:   email.value.trim(),
+        organisation: org       ? org.value.trim()       : '',
+        phone:        phone.value.trim(),
+        team_type:    teamType.options[teamType.selectedIndex].text,
+        team_count:   teamCount ? teamCount.value        : '1',
+        notes:        notes     ? notes.value.trim()     : '',
+      }).catch(() => {
+        // Silent fail — registration still shows as received to the user
+      }).finally(() => {
+        registrationForm.classList.add('hidden');
+        const confirmation = document.getElementById('confirmation');
+        if (confirmation) {
+          confirmation.classList.remove('hidden');
+          confirmation.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      });
     }
   });
 }
@@ -279,7 +297,59 @@ if (registrationForm) {
 }());
 
 /* =============================================================================
-   MODULE 6 — DOMContentLoaded INIT
+   MODULE 6 — GALLERY MODAL / LIGHTBOX
+   Click an image in the Past Events section to open a detail popup.
+   Detail text for each card is set via past.card*.detail keys in content.js.
+============================================================================= */
+
+(function initGalleryModal() {
+  const overlay   = document.getElementById('gallery-modal');
+  const closeBtn  = document.getElementById('gallery-modal-close');
+  const modalImg  = document.getElementById('gallery-modal-img');
+  const modalTitle  = document.getElementById('gallery-modal-title');
+  const modalDetail = document.getElementById('gallery-modal-detail');
+
+  if (!overlay) return;
+
+  function openModal(cardIndex) {
+    const lang = localStorage.getItem('agc_lang') || 'th';
+    const t    = (window.SITE_CONTENT || {})[lang] || {};
+
+    const card   = document.querySelector(`[data-card-index="${cardIndex}"]`);
+    const imgEl  = card ? card.querySelector('img') : null;
+
+    modalImg.src = imgEl ? imgEl.src : '';
+    modalImg.alt = imgEl ? imgEl.alt : '';
+    modalTitle.textContent  = t[`past.card${cardIndex}`] || '';
+    modalDetail.textContent = t[`past.card${cardIndex}.detail`] || '';
+
+    overlay.classList.add('active');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    overlay.classList.remove('active');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  // Attach click handlers to each gallery image wrapper
+  document.querySelectorAll('.gallery-card').forEach(card => {
+    const idx     = card.getAttribute('data-card-index');
+    const imgWrap = card.querySelector('.gallery-img-wrap');
+    if (imgWrap && idx) {
+      imgWrap.addEventListener('click', () => openModal(idx));
+    }
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+}());
+
+/* =============================================================================
+   MODULE 7 — DOMContentLoaded INIT
    Bootstraps the page: language, language-button handlers, nav scroll state.
 ============================================================================= */
 

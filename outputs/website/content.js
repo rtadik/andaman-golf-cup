@@ -158,10 +158,15 @@ window.SITE_CONTENT = {
     'past.heading':    'Our Work in Action',
     'past.subheading': 'A legacy of conservation and community engagement across the Andaman coast.',
     'past.card1':      'Jazz for the King — ANRCF Charity Gala Concert in Partnership with the Tourism Authority of Thailand',
+    'past.card1.detail': 'Add details about this event here. Describe what happened, who attended, and what was achieved.',
     'past.card2':      'Unite Hearts, Protect the Forest — National Reforestation Campaign Honouring His Majesty the King',
+    'past.card2.detail': 'Add details about this event here. Describe what happened, who attended, and what was achieved.',
     'past.card3':      'Return Sea Turtles to the Andaman Sea — Big Cleaning Day, Sirinath National Park, Phuket',
+    'past.card3.detail': 'Add details about this event here. Describe what happened, who attended, and what was achieved.',
     'past.card4':      'Maya Bay Mooring Project — 10-Agency Coalition to Protect Phi Phi Islands\' Coral Reefs from Anchor Damage',
+    'past.card4.detail': 'Add details about this event here. Describe what happened, who attended, and what was achieved.',
     'past.card5':      'International Sea Turtle Release Ceremony — Ambassadors from 10 Countries Join ANRCF on the Andaman Coast',
+    'past.card5.detail': 'Add details about this event here. Describe what happened, who attended, and what was achieved.',
 
     // ── REGISTRATION FORM ─────────────────────────────────────────
     'register.heading':          'Register Your Interest',
@@ -337,10 +342,15 @@ window.SITE_CONTENT = {
     'past.heading':    'ผลงานของเราในการปฏิบัติจริง',
     'past.subheading': 'มรดกแห่งการอนุรักษ์และการมีส่วนร่วมกับชุมชนตลอดแนวชายฝั่งอันดามัน',
     'past.card1':      'แจ๊สเพื่อในหลวง — งานกาลาการกุศล ANRCF ร่วมกับการท่องเที่ยวแห่งประเทศไทย',
+    'past.card1.detail': 'เพิ่มรายละเอียดเกี่ยวกับกิจกรรมนี้ที่นี่ อธิบายสิ่งที่เกิดขึ้น ผู้เข้าร่วม และผลลัพธ์ที่ได้รับ',
     'past.card2':      'รวมใจภักดิ์ รักษ์ป่า ถวายพ่อ — โครงการปลูกป่าแห่งชาติเพื่อถวายพระบาทสมเด็จพระเจ้าอยู่หัว',
+    'past.card2.detail': 'เพิ่มรายละเอียดเกี่ยวกับกิจกรรมนี้ที่นี่ อธิบายสิ่งที่เกิดขึ้น ผู้เข้าร่วม และผลลัพธ์ที่ได้รับ',
     'past.card3':      'คืนเต่าคืนสู่ทะเลอันดามัน — Big Cleaning Day อุทยานแห่งชาติสิรินาถ ภูเก็ต',
+    'past.card3.detail': 'เพิ่มรายละเอียดเกี่ยวกับกิจกรรมนี้ที่นี่ อธิบายสิ่งที่เกิดขึ้น ผู้เข้าร่วม และผลลัพธ์ที่ได้รับ',
     'past.card4':      'โครงการวางทุนผูกเรืออ่าวมาหยา — 10 หน่วยงานร่วมปกป้องปะการังหมู่เกาะพีพีจากการทอดสมอเรือ',
+    'past.card4.detail': 'เพิ่มรายละเอียดเกี่ยวกับกิจกรรมนี้ที่นี่ อธิบายสิ่งที่เกิดขึ้น ผู้เข้าร่วม และผลลัพธ์ที่ได้รับ',
     'past.card5':      'พิธีปล่อยเต่าทะเลนานาชาติ — เอกอัครราชทูต 10 ประเทศร่วมกับมูลนิธิ ANRCF ณ ชายฝั่งอันดามัน',
+    'past.card5.detail': 'เพิ่มรายละเอียดเกี่ยวกับกิจกรรมนี้ที่นี่ อธิบายสิ่งที่เกิดขึ้น ผู้เข้าร่วม และผลลัพธ์ที่ได้รับ',
 
     // ── REGISTRATION FORM ─────────────────────────────────────────
     'register.heading':          'ลงทะเบียนความสนใจของคุณ',
@@ -516,10 +526,15 @@ window.SITE_CONTENT = {
     'past.heading':    'Наша работа в действии',
     'past.subheading': 'Наследие природоохранной деятельности и работы с сообществами на побережье Андамана.',
     'past.card1':      'Джаз для Короля — Благотворительный гала-концерт ANRCF совместно с Туристическим управлением Таиланда',
+    'past.card1.detail': 'Добавьте подробности о мероприятии здесь. Опишите, что произошло, кто участвовал и каких результатов удалось достичь.',
     'past.card2':      'Объединить сердца, защитить лес — Национальная кампания по лесовосстановлению в честь Его Величества Короля',
+    'past.card2.detail': 'Добавьте подробности о мероприятии здесь. Опишите, что произошло, кто участвовал и каких результатов удалось достичь.',
     'past.card3':      'Вернём морских черепах в Андаманское море — Большой день уборки, Национальный парк Сиринат, Пхукет',
+    'past.card3.detail': 'Добавьте подробности о мероприятии здесь. Опишите, что произошло, кто участвовал и каких результатов удалось достичь.',
     'past.card4':      'Проект установки мурингов в бухте Майя-Бэй — Коалиция 10 ведомств для защиты коралловых рифов островов Пхи-Пхи',
+    'past.card4.detail': 'Добавьте подробности о мероприятии здесь. Опишите, что произошло, кто участвовал и каких результатов удалось достичь.',
     'past.card5':      'Международная церемония выпуска морских черепах — Послы 10 стран присоединились к ANRCF на побережье Андамана',
+    'past.card5.detail': 'Добавьте подробности о мероприятии здесь. Опишите, что произошло, кто участвовал и каких результатов удалось достичь.',
 
     // ── REGISTRATION FORM ─────────────────────────────────────────
     'register.heading':          'Зарегистрировать интерес',
