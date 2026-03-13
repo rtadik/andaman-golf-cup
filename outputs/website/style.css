@@ -51,7 +51,7 @@ html {
 
 body {
   font-family: var(--font-sans);
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.6;
   color: var(--text-dark);
   background: var(--cream);
@@ -713,9 +713,12 @@ small {
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 32px;
   margin-top: 60px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .stat-card {
