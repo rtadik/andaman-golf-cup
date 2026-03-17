@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andaman Golf Cup 2026 — Booklet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    @page { size: A4 landscape; margin: 0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 13px; }
+    body {
+      font-family: 'Kanit', 'Inter', sans-serif;
+      background: #e0e0e0;
+      color: #2c2c2c;
+      padding-top: 44px;
+    }
+
+    .spread {
+      width: 297mm;
+      height: 210mm;
+      display: flex;
+      margin: 20px auto;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .half-page {
+      width: 148.5mm;
+      height: 210mm;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media print {
+      body { background: none; padding-top: 0; }
+      .spread { margin: 0; box-shadow: none; page-break-after: always; }
+      .no-print { display: none !important; }
+    }
+
+    [contenteditable="true"]:hover {
+      outline: 2px dashed rgba(201, 168, 76, 0.4);
+      outline-offset: 2px;
+    }
+    [contenteditable="true"]:focus {
+      outline: 2px solid #C9A84C;
+      outline-offset: 2px;
+      background: rgba(201, 168, 76, 0.04);
+    }
+
+    :root {
+      --green-deep:  #0D2419;
+      --green-dark:  #1B3A2D;
+      --green-mid:   #2D5A3D;
+      --green-light: #4A7C5F;
+      --gold:        #C9A84C;
+      --gold-light:  #E8C97A;
+      --gold-dark:   #A8872E;
+      --cream:       #F8F5EE;
+      --white:       #ffffff;
+    }
+
+    /* ================================================================
+       COVERS — Full spread background image
+    ================================================================ */
+    .cover-spread {
+      background-image: url('booklet-bg.png');
+      background-size: 100% 100%;
+      background-position: center;
+    }
+
+    .cover-page {
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* ---- Front Cover (right half — coral/golf scene fills bottom ~65%) ---- */
+    /* Safe text zone: top ~32% of the page */
+    .front-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      height: 100%;
+      padding: 6mm 10mm 0 10mm;
+    }
+
+    .front-logo {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 2px solid rgba(201, 168, 76, 0.5);
+      margin-top: 4mm;
+      margin-bottom: 8px;
+      box-shadow: 0 0 30px rgba(201, 168, 76, 0.15);
+    }
+
+    .front-event-name {
+      font-size: 0.95rem;
+      font-weight: 300;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      opacity: 0.75;
+      margin-bottom: 2px;
+    }
+
+    .front-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .front-title .year {
+      display: block;
+      font-size: 5rem;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 10px;
+      background: linear-gradient(180deg, var(--gold-light) 0%, var(--gold-dark) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .front-subtitle {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.75);
+      margin-top: 6px;
+      margin-bottom: 0;
+      max-width: 90%;
+      line-height: 1.4;
+    }
+
+    .front-divider {
+      width: 50px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 8px auto 8px;
+    }
+
+    .front-details {
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.65);
+    }
+
+    .front-details strong {
+      font-weight: 500;
+      color: var(--gold-light);
+      font-size: 1.05rem;
+    }
+
+    .front-qr {
+      position: absolute;
+      bottom: 8mm;
+      left: 6mm;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .front-qr img {
+      width: 44px;
+      height: 44px;
+      border-radius: 3px;
+      border: 1px solid rgba(201, 168, 76, 0.35);
+    }
+
+    .front-qr .qr-label {
+      font-size: 0.5rem;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* ---- Back Cover (left half) ---- */
+    /* Gold rectangle sits at ~52-68% from top, ~15-92% from left */
+    .back-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 8mm 10mm 8mm 10mm;
+    }
+
+    .back-logo-area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 0 0 auto;
+      padding-top: 5mm;
+    }
+
+    .back-logo-area img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 2px solid rgba(201, 168, 76, 0.4);
+      margin-bottom: 10px;
+      box-shadow: 0 0 25px rgba(201, 168, 76, 0.1);
+    }
+
+    .back-logo-area .org-name {
+      font-size: 0.92rem;
+      font-weight: 300;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    /* Contact block — centered on the gold rectangle at ~60% from top */
+    .back-contacts {
+      position: absolute;
+      top: 58%;
+      left: 12mm;
+      right: 12mm;
+      transform: translateY(-50%);
+      padding: 3mm 4mm;
+      border-radius: 0;
+      background: transparent;
+      border: none;
+    }
+
+    .back-contacts h3 {
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--green-deep);
+      margin-bottom: 6px;
+    }
+
+    .back-contacts .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 4px;
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--green-deep);
+    }
+
+    .back-contacts .contact-row .icon {
+      min-width: 38px;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: rgba(13, 36, 25, 0.45);
+      font-weight: 500;
+    }
+
+    .back-bottom {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .back-tagline {
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .back-qr {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .back-qr img {
+      width: 55px;
+      height: 55px;
+      border-radius: 4px;
+      border: 1px solid rgba(201, 168, 76, 0.25);
+    }
+
+    .back-qr .qr-label {
+      font-size: 0.62rem;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* ================================================================
+       INSIDE PAGES
+    ================================================================ */
+    .inside-left,
+    .inside-right {
+      background: var(--white);
+      color: #2c2c2c;
+      padding: 10mm 11mm;
+    }
+
+    .inside-right {
+      border-left: 1px solid #e5e5e5;
+    }
+
+    /* ---- Registration Form (inside left) ---- */
+    .form-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 5mm;
+      padding-bottom: 3mm;
+      border-bottom: 2px solid var(--green-dark);
+    }
+
+    .form-header img { width: 44px; height: 44px; }
+
+    .form-header-text h1 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      line-height: 1.1;
+    }
+
+    .form-header-text .form-subtitle {
+      font-size: 0.68rem;
+      font-weight: 300;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #888;
+    }
+
+    .pricing-box {
+      background: #eef3ed;
+      border-left: 3px solid var(--green-dark);
+      padding: 2.5mm 4mm;
+      margin-bottom: 4mm;
+      border-radius: 0 3px 3px 0;
+    }
+
+    .pricing-box h3 {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--green-dark);
+      margin-bottom: 2px;
+    }
+
+    .pricing-box .price-item {
+      font-size: 0.92rem;
+      font-weight: 400;
+    }
+
+    .pricing-box .price-item strong { font-weight: 600; }
+
+    .form-section {
+      margin-bottom: 3mm;
+    }
+
+    .form-section h3 {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--green-dark);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 2mm;
+      padding-bottom: 0.5mm;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .checkbox-row {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 2mm;
+      font-size: 0.88rem;
+    }
+
+    .checkbox-row label {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .checkbox-row input[type="checkbox"] {
+      width: 13px;
+      height: 13px;
+      accent-color: var(--green-mid);
+    }
+
+    .form-line {
+      display: flex;
+      align-items: baseline;
+      margin-bottom: 2mm;
+      font-size: 0.85rem;
+    }
+
+    .form-line .label {
+      min-width: 58px;
+      font-weight: 500;
+      color: #444;
+      flex-shrink: 0;
+    }
+
+    .form-line .dots {
+      flex: 1;
+      border-bottom: 1px dotted #bbb;
+      margin: 0 3px;
+      min-height: 15px;
+    }
+
+    .player-grid {
+      display: grid;
+      grid-template-columns: 20px 1fr;
+      gap: 2px 5px;
+      font-size: 0.85rem;
+      margin-bottom: 2.5mm;
+    }
+
+    .player-grid .num {
+      font-weight: 600;
+      color: var(--green-dark);
+    }
+
+    .player-grid .dots {
+      border-bottom: 1px dotted #bbb;
+      min-height: 16px;
+    }
+
+    .payment-box {
+      background: #f8f8f8;
+      border: 1px solid #e0e0e0;
+      border-radius: 3px;
+      padding: 2.5mm 4mm;
+      font-size: 0.85rem;
+    }
+
+    .payment-box h3 {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--green-dark);
+      margin-bottom: 2mm;
+    }
+
+    .payment-box .pay-option {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 1.5mm;
+    }
+
+    .payment-box .pay-option input[type="checkbox"] {
+      width: 13px;
+      height: 13px;
+    }
+
+    .payment-box .bank-detail {
+      margin-left: 20px;
+      font-size: 0.8rem;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .form-footer {
+      margin-top: 2.5mm;
+      font-size: 0.72rem;
+      color: #999;
+      text-align: center;
+    }
+
+    /* ---- Details (inside right) ---- */
+    .detail-section {
+      margin-bottom: 4mm;
+    }
+
+    .detail-section h2 {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--green-dark);
+      padding: 1.5mm 4mm;
+      background: linear-gradient(90deg, #e8f0eb, transparent);
+      border-left: 3px solid var(--green-dark);
+      margin-bottom: 2.5mm;
+    }
+
+    .detail-section h3 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 1.5mm;
+      margin-top: 2mm;
+    }
+
+    .detail-section p,
+    .detail-section li {
+      font-size: 0.82rem;
+      line-height: 1.55;
+      color: #444;
+    }
+
+    .detail-section ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .detail-section ul li::before {
+      content: '–  ';
+      color: var(--green-dark);
+      font-weight: 600;
+    }
+
+    .detail-section ol {
+      padding-left: 18px;
+    }
+
+    .detail-section ol li {
+      margin-bottom: 1.5mm;
+    }
+
+    /* ================================================================
+       EDIT TOOLBAR
+    ================================================================ */
+    .edit-toolbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--green-deep);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      z-index: 1000;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    }
+
+    .edit-toolbar .toolbar-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .edit-toolbar .toolbar-left span { opacity: 0.5; }
+
+    .edit-toolbar button {
+      background: var(--green-mid);
+      color: #fff;
+      border: none;
+      padding: 6px 16px;
+      border-radius: 4px;
+      font-size: 13px;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .edit-toolbar button:hover { background: var(--green-light); }
+
+    .edit-toolbar button.secondary {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .edit-toolbar button.secondary:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    @media print {
+      .edit-toolbar { display: none; }
+      body { padding-top: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOOLBAR -->
+  <div class="edit-toolbar no-print">
+    <div class="toolbar-left">
+      <strong>Andaman Golf Cup 2026 — Booklet</strong>
+      <span>|</span>
+      <span>Click any text to edit</span>
+    </div>
+    <div>
+      <button class="secondary" onclick="window.print()">Print / PDF</button>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SPREAD 1: BACK COVER (left) + FRONT COVER (right)
+  ============================================================ -->
+  <div class="spread cover-spread">
+
+    <!-- BACK COVER (left half of image) -->
+    <div class="half-page cover-page back-cover">
+      <div class="back-content">
+        <div class="back-logo-area">
+          <img src="website/Favicon.png" alt="ANRCF Logo">
+          <div class="org-name" contenteditable="true">มูลนิธิอนุรักษ์ทรัพยากรธรรมชาติอันดามัน</div>
+          <div class="org-name" style="margin-top:5px; font-size:0.55rem; letter-spacing:3px;" contenteditable="true">Andaman Natural Resources Conservation Foundation</div>
+        </div>
+
+        <div class="back-contacts">
+          <h3>ติดต่อ / Contact</h3>
+          <div class="contact-row">
+            <span class="icon">Tel</span>
+            <span contenteditable="true">+66 99 141 4896</span>
+          </div>
+          <div class="contact-row">
+            <span class="icon">Email</span>
+            <span contenteditable="true">contact@anrcf.com</span>
+          </div>
+          <div class="contact-row">
+            <span class="icon">Web</span>
+            <span contenteditable="true">golf.anrcf.com</span>
+          </div>
+        </div>
+
+        <div class="back-bottom">
+          <div class="back-tagline" contenteditable="true">Conserve · Connect · Contribute</div>
+          <div class="back-qr">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://golf.anrcf.com&color=C9A84C&bgcolor=0D2419" alt="QR Code">
+            <span class="qr-label">golf.anrcf.com</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRONT COVER (right half of image — golf/coral scene) -->
+    <div class="half-page cover-page front-cover">
+      <div class="front-content">
+        <img src="website/Favicon.png" alt="ANRCF Logo" class="front-logo">
+
+        <div class="front-event-name" contenteditable="true">Andaman Natural Resources Conservation</div>
+        <div class="front-title">
+          <span contenteditable="true">Charity Golf</span>
+          <span class="year" contenteditable="true">2026</span>
+        </div>
+
+        <div class="front-subtitle" contenteditable="true">กอล์ฟการกุศลเพื่อกองทุนเยาวชนอนุรักษ์ธรรมชาติอันดามัน</div>
+
+        <div class="front-divider"></div>
+
+        <div class="front-details">
+          <div contenteditable="true"><strong>25 พฤษภาคม 2026</strong></div>
+          <div contenteditable="true">Shotgun Start 13:00 น.</div>
+          <div contenteditable="true">สนามกอล์ฟ ศูนย์พัฒนากีฬากองทัพบก รามอินทรา</div>
+          <div contenteditable="true">กรุงเทพมหานคร</div>
+        </div>
+      </div>
+
+      <div class="front-qr">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://golf.anrcf.com&color=C9A84C&bgcolor=0D2419" alt="QR Code">
+        <span class="qr-label">golf.anrcf.com</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SPREAD 2: INSIDE LEFT (Registration) + INSIDE RIGHT (Details)
+  ============================================================ -->
+  <div class="spread">
+
+    <!-- INSIDE LEFT: REGISTRATION FORM -->
+    <div class="half-page inside-left">
+
+      <div class="form-header">
+        <img src="website/Favicon.png" alt="ANRCF Logo">
+        <div class="form-header-text">
+          <h1 contenteditable="true">ใบสมัคร</h1>
+          <div class="form-subtitle" contenteditable="true">Andaman Conservation Charity Golf Tournament 2026</div>
+        </div>
+      </div>
+
+      <div class="pricing-box">
+        <h3 contenteditable="true">ค่าสมัคร :</h3>
+        <div class="price-item" contenteditable="true">– ทีมละ <strong>50,000 บาท</strong> / กลุ่ม (4 ท่าน)</div>
+      </div>
+
+      <div class="form-section">
+        <h3>ประเภทการสมัคร</h3>
+        <div class="checkbox-row">
+          <label><input type="checkbox"> ส่งทีมเข้าแข่งขัน</label>
+          <label><input type="checkbox"> ไม่ส่งทีมเข้าแข่งขัน</label>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3>รายการบริจาคสมทบทุน</h3>
+        <div class="checkbox-row">
+          <label><input type="checkbox"> บริจาคเงิน จำนวน ............................ บาท</label>
+        </div>
+        <div class="checkbox-row">
+          <label><input type="checkbox"> บริจาคของรางวัล</label>
+        </div>
+        <div class="player-grid" style="margin-top:1mm;">
+          <span class="num">1)</span><span class="dots"></span>
+          <span class="num">2)</span><span class="dots"></span>
+          <span class="num">3)</span><span class="dots"></span>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3>รายละเอียดผู้เข้าแข่งขัน</h3>
+        <div class="form-line">
+          <span class="label">ชื่อทีม</span><span class="dots"></span>
+        </div>
+        <div class="form-line">
+          <span class="label">ชื่อผู้ติดต่อ</span><span class="dots"></span>
+        </div>
+        <div class="form-line">
+          <span class="label">โทร</span><span class="dots"></span>
+          <span class="label" style="margin-left:6px;">มือถือ</span><span class="dots"></span>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3>ชื่อผู้เข้าแข่งขัน</h3>
+        <div class="player-grid">
+          <span class="num">1)</span><span class="dots"></span>
+          <span class="num">2)</span><span class="dots"></span>
+          <span class="num">3)</span><span class="dots"></span>
+          <span class="num">4)</span><span class="dots"></span>
+        </div>
+      </div>
+
+      <div class="payment-box">
+        <h3>การชำระเงิน</h3>
+        <div class="pay-option">
+          <input type="checkbox">
+          <span>เงินสด</span>
+        </div>
+        <div class="pay-option">
+          <input type="checkbox">
+          <span>โอนเงินเข้าบัญชี</span>
+        </div>
+        <div class="bank-detail" contenteditable="true">
+          ธนาคาร: ............................ สาขา: ............................<br>
+          เลขที่บัญชี: ............................<br>
+          ชื่อบัญชี: มูลนิธิอนุรักษ์ทรัพยากรธรรมชาติอันดามัน
+        </div>
+      </div>
+
+      <div class="form-footer" contenteditable="true">
+        โปรดส่งใบสมัครมาที่ contact@anrcf.com หรือ โทร +66 99 141 4896
+      </div>
+
+    </div>
+
+    <!-- INSIDE RIGHT: TOURNAMENT DETAILS -->
+    <div class="half-page inside-right">
+
+      <div class="detail-section">
+        <h2>วัตถุประสงค์</h2>
+        <ol contenteditable="true">
+          <li>เพื่อเป็นกิจกรรมส่งเสริมและพัฒนาความสัมพันธ์กับผู้สนับสนุนมูลนิธิฯ</li>
+          <li>เพื่อมอบทุนการศึกษาให้กับเยาวชนในพื้นที่อนุรักษ์ทรัพยากรธรรมชาติอันดามัน</li>
+          <li>เพื่อสนับสนุนกิจกรรมสาธารณประโยชน์ต่างๆ ของมูลนิธิฯ</li>
+        </ol>
+      </div>
+
+      <div class="detail-section">
+        <h2>รางวัลการแข่งขัน</h2>
+
+        <h3>ประเภททีม :</h3>
+        <ul contenteditable="true">
+          <li>ชนะเลิศประเภททีม</li>
+          <li>รองชนะเลิศประเภททีม</li>
+        </ul>
+
+        <h3>ประเภทบุคคล :</h3>
+        <ul contenteditable="true">
+          <li>OVERALL LOW GROSS</li>
+          <li>OVERALL LOW NET</li>
+          <li>รางวัลชนะเลิศและรองชนะเลิศไฟลท์ A</li>
+          <li>รางวัลชนะเลิศและรองชนะเลิศไฟลท์ B</li>
+          <li>รางวัลชนะเลิศและรองชนะเลิศไฟลท์ C</li>
+          <li>รางวัลบูบี้</li>
+        </ul>
+      </div>
+
+      <div class="detail-section">
+        <h2>รางวัลพิเศษ</h2>
+        <ul contenteditable="true">
+          <li>รางวัล HOLE IN ONE จำนวน 2 หลุม</li>
+          <li>รางวัลใกล้สอง พาร์ 3 ทุกหลุม (4 หลุม)</li>
+          <li>รางวัลใกล้สอง ชื่อต 2 จำนวน 2 หลุม</li>
+          <li>รางวัลพัตต์ไกล จำนวน 2 หลุม</li>
+          <li>รางวัลจับฉลาก</li>
+        </ul>
+      </div>
+
+      <div class="detail-section">
+        <h2>กฎ และ กติกาการแข่งขัน และ การคิดคะแนน</h2>
+        <ol contenteditable="true">
+          <li>ใช้การแข่งขันแบบ STROKE PLAY คิดคะแนนด้วยระบบ 36 SYSTEM ระบุแต้มต่อแต่ละไฟลท์</li>
+          <li>การตัดสินของคณะกรรมการการจัดการแข่งขันถือเป็นที่สิ้นสุด หากมีข้อโต้แย้ง ทางผู้เข้าแข่งขันจะต้องแจ้งทาง คณะกรรมการอย่างน้อย 15 นาที ก่อนประกาศผลการแข่งขัน</li>
+          <li>กฎการแข่งขันจะใช้เฉพาะของ LOCAL RULE ของทางสนาม</li>
+          <li>ในกรณีที่มีสภาพอากาศไม่เอื้อต่อการแข่งขัน ทางสนามขอสงวนสิทธิ์ในการเลื่อนการแข่งขันออก โดยพิจารณาตัดสินจากสภาพของสนาม</li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
