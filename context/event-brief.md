@@ -7,7 +7,7 @@
 - **Branding:** Green and blue tones, clean professional aesthetic, nature photography
 
 ## Event Overview
-- **Official Name:** Andaman Natural Resources Conservation Charity Golf Tournament 2026
+- **Official Name:** Green Charity Golf Tournament 2026 (กอล์ฟการกุศลเพื่อสิ่งแวดล้อม)
 - **Date:** May 25, 2026
 - **Time:** 1:00 PM – 6:00 PM (golf), then gala banquet dinner from ~6:00 PM onward
 - **Location:** สนามกอล์ฟ ศูนย์พัฒนากีฬากองทัพบก รามอินทรา / Royal Thai Army Sports Center Ramindra, Bangkok
@@ -62,7 +62,7 @@
 - **Event Name:** TBD — needs to be decided
 
 ## Open Items
-- [x] Official event name: **Andaman Natural Resources Conservation Charity Golf Tournament 2026**
+- [x] Official event name: **Green Charity Golf Tournament 2026** (กอล์ฟการกุศลเพื่อสิ่งแวดล้อม)
 - [x] Domain: **golf.anrcf.com**
 - [x] Venue: Royal Thai Army Sports Center Ramindra (สนามกอล์ฟ ศูนย์พัฒนากีฬากองทัพบก รามอินทรา), Bangkok
 - [x] Sponsorship tiers: Platinum/Gold/Silver/Hole (confirmed from project document)

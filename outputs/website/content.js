@@ -26,11 +26,11 @@ window.SITE_CONTENT = {
   en: {
 
     // ── META ──────────────────────────────────────────────────────
-    'meta.title':        'Andaman Natural Resources Conservation Charity Golf Tournament 2026',
+    'meta.title':        'Green Charity Golf Tournament 2026 — A Premier Charity Golf Event in Bangkok',
     'meta.description':  'Join Thailand\'s most prestigious charity golf event. 25 May 2026, Royal Thai Army Sports Center Ramindra, Bangkok. Register your team and connect with Thailand\'s most influential leaders. Net proceeds fund youth conservation.',
 
     // ── NAVIGATION ────────────────────────────────────────────────
-    'nav.logo':          'Andaman Golf Cup',
+    'nav.logo':          'Green Charity Golf',
     'nav.about':         'About',
     'nav.agenda':        'Agenda',
     'nav.tickets':       'Tickets',
@@ -40,7 +40,7 @@ window.SITE_CONTENT = {
 
     // ── HERO ──────────────────────────────────────────────────────
     'hero.eyebrow':      'ANRCF Charity Event · Bangkok, Thailand',
-    'hero.headline':     'Andaman Golf 2026',
+    'hero.headline':     'Green Charity Golf Tournament 2026',
     'hero.subheadline':  'Where Thailand\'s most influential voices gather for golf, purpose, and connection.',
     'hero.date':         '25 May 2026 · Bangkok, Thailand',
     'hero.proof.label':  '35 Teams — Limited Places',
@@ -68,7 +68,7 @@ window.SITE_CONTENT = {
     'agenda.item1.desc':   'Collect your Score Card, enjoy a welcome lunch, and meet your fellow participants before the tournament begins.',
     'agenda.item2.time':   '12:00 PM',
     'agenda.item2.title':  'Golf Tournament Begins',
-    'agenda.item2.desc':   'The Andaman Golf 2026 tournament commences. Teams compete in a team format across the championship course.',
+    'agenda.item2.desc':   'The Green Charity Golf Tournament 2026 commences. Teams compete in a team format across the championship course.',
     'agenda.item3.time':   '6:00 PM',
     'agenda.item3.title':  'Gala Dinner — Phu Chomphon Hall',
     'agenda.item3.desc':   'An exclusive gala dinner at Phu Chomphon Hall, bringing all participants together for an evening of celebration and elite networking.',
@@ -192,15 +192,15 @@ window.SITE_CONTENT = {
     'confirm.heading':       'Thank You',
     'confirm.body':          'Your registration has been received. Our team will contact you within 48 hours to confirm your place and provide further details regarding payment and logistics.',
     'confirm.bank.heading':  'Payment Details',
-    'confirm.bank.details':  'Account Name: Andaman Natural Resources Conservation Foundation\nBank: [BANK NAME — TO BE CONFIRMED]\nAccount Number: [XXXX-XXXX-XXXX — TO BE CONFIRMED]\nAmount: As per selected team category',
-    'confirm.bank.note':     'Please use your full name as the transfer reference and send proof of payment to [EMAIL — TO BE CONFIRMED].',
+    'confirm.bank.details':  'Account Name: Andaman Natural Resources Conservation Foundation\nBank: Government Savings Bank (GSB / ออมสิน)\nAccount Number: 020154145807\nAmount: As per selected team category',
+    'confirm.bank.note':     'Please use your full name as the transfer reference and send proof of payment to contact@anrcf.com.',
 
     // ── FOOTER ────────────────────────────────────────────────────
     'footer.tagline':         'A premier charity golf event uniting Thailand\'s most influential voices for conservation.',
     'footer.links.heading':   'Quick Links',
     'footer.contact.heading': 'Contact',
-    'footer.contact.email':   '[EMAIL — TO BE CONFIRMED]',
-    'footer.contact.phone':   '[PHONE — TO BE CONFIRMED]',
+    'footer.contact.email':   'contact@anrcf.com',
+    'footer.contact.phone':   '+66 83 192 9996',
     'footer.copyright':       '© 2026 Andaman Natural Resources Conservation Foundation. All rights reserved.'
   },
 
@@ -210,11 +210,11 @@ window.SITE_CONTENT = {
   th: {
 
     // ── META ──────────────────────────────────────────────────────
-    'meta.title':        'โครงการแข่งขันกอล์ฟการกุศลอนุรักษ์ทรัพยากรธรรมชาติอันดามัน 2026',
-    'meta.description':  'ร่วมงานกอล์ฟการกุศลเพื่ออนุรักษ์ทรัพยากรธรรมชาติอันดามัน วันที่ 25 พฤษภาคม 2569 ณ สนามกอล์ฟ ศูนย์พัฒนากีฬากองทัพบก รามอินทรา (Royal Thai Army Sports Center Ramindra) กรุงเทพมหานคร รายได้สมทบทุนกองทุนเยาวชนรักษ์สิ่งแวดล้อม',
+    'meta.title':        'Green Charity Golf Tournament 2026 — กอล์ฟการกุศลเพื่อสิ่งแวดล้อม',
+    'meta.description':  'ร่วมงานกอล์ฟการกุศลเพื่อสิ่งแวดล้อม วันที่ 25 พฤษภาคม 2569 ณ สนามกอล์ฟ ศูนย์พัฒนากีฬากองทัพบก รามอินทรา (Royal Thai Army Sports Center Ramindra) กรุงเทพมหานคร รายได้สมทบทุนกองทุนเยาวชนรักษ์สิ่งแวดล้อม',
 
     // ── NAVIGATION ────────────────────────────────────────────────
-    'nav.logo':          'อันดามัน กอล์ฟ คัพ',
+    'nav.logo':          'กอล์ฟการกุศลเพื่อสิ่งแวดล้อม',
     'nav.about':         'เกี่ยวกับงาน',
     'nav.agenda':        'กำหนดการ',
     'nav.tickets':       'บัตรเข้าร่วม',
@@ -224,7 +224,7 @@ window.SITE_CONTENT = {
 
     // ── HERO ──────────────────────────────────────────────────────
     'hero.eyebrow':      'อีเว้นท์การกุศล ANRCF · กรุงเทพมหานคร ประเทศไทย',
-    'hero.headline':     'อันดามันกอล์ฟ 2026',
+    'hero.headline':     'Green Charity Golf Tournament 2026',
     'hero.subheadline':  'สถานที่ที่บุคคลผู้ทรงอิทธิพลที่สุดของประเทศไทยมาพบปะกัน เพื่อกอล์ฟ เพื่อเจตนารมณ์ และเพื่อสายสัมพันธ์อันยิ่งใหญ่',
     'hero.date':         '25 พฤษภาคม 2569 · กรุงเทพมหานคร ประเทศไทย',
     'hero.proof.label':  '35 ทีมเท่านั้น',
@@ -252,7 +252,7 @@ window.SITE_CONTENT = {
     'agenda.item1.desc':   'ลงทะเบียนรับ Score Card พร้อมรับประทานอาหารกลางวันต้อนรับก่อนเริ่มการแข่งขัน',
     'agenda.item2.time':   '12:00 น.',
     'agenda.item2.title':  'เริ่มการแข่งขันกอล์ฟ',
-    'agenda.item2.desc':   'อันดามันกอล์ฟ 2026 เริ่มต้นอย่างเป็นทางการ ทีมต่าง ๆ แข่งขันในรูปแบบทีมบนสนามแชมเปี้ยนชิพ',
+    'agenda.item2.desc':   'Green Charity Golf Tournament 2026 เริ่มต้นอย่างเป็นทางการ ทีมต่าง ๆ แข่งขันในรูปแบบทีมบนสนามแชมเปี้ยนชิพ',
     'agenda.item3.time':   '18:00 น.',
     'agenda.item3.title':  'งานเลี้ยงสังสรรค์ ณ ห้องพู่จอมพล',
     'agenda.item3.desc':   'งานเลี้ยงสังสรรค์อันทรงเกียรติ ณ ห้องพู่จอมพล รวมผู้เข้าร่วมทุกท่านสู่ค่ำคืนแห่งการเฉลิมฉลองและสร้างเครือข่าย',
@@ -376,15 +376,15 @@ window.SITE_CONTENT = {
     'confirm.heading':       'ขอบคุณท่าน',
     'confirm.body':          'ได้รับการลงทะเบียนของท่านเรียบร้อยแล้ว ทีมงานของเราจะติดต่อท่านภายใน 48 ชั่วโมง เพื่อยืนยันที่นั่งและให้ข้อมูลเพิ่มเติมเกี่ยวกับการชำระเงินและรายละเอียดการเข้าร่วมงาน',
     'confirm.bank.heading':  'รายละเอียดการชำระเงิน',
-    'confirm.bank.details':  'ชื่อบัญชี: มูลนิธิอนุรักษ์ทรัพยากรธรรมชาติอันดามัน\nธนาคาร: [ชื่อธนาคาร — รอการยืนยัน]\nเลขที่บัญชี: [XXXX-XXXX-XXXX — รอการยืนยัน]\nจำนวนเงิน: ตามประเภทของทีมที่เลือก',
-    'confirm.bank.note':     'กรุณาใช้ชื่อ-นามสกุลเต็มของท่านเป็นอ้างอิงการโอน และส่งหลักฐานการชำระเงินมาที่ [อีเมล — รอการยืนยัน]',
+    'confirm.bank.details':  'ชื่อบัญชี: มูลนิธิอนุรักษ์ทรัพยากรธรรมชาติอันดามัน\nธนาคาร: ธนาคารออมสิน\nเลขที่บัญชี: 020154145807\nจำนวนเงิน: ตามประเภทของทีมที่เลือก',
+    'confirm.bank.note':     'กรุณาใช้ชื่อ-นามสกุลเต็มของท่านเป็นอ้างอิงการโอน และส่งหลักฐานการชำระเงินมาที่ contact@anrcf.com',
 
     // ── FOOTER ────────────────────────────────────────────────────
     'footer.tagline':         'งานกอล์ฟการกุศลระดับพรีเมียมที่รวบรวมผู้ทรงอิทธิพลที่สุดของประเทศไทยเพื่อการอนุรักษ์',
     'footer.links.heading':   'ลิงก์ด่วน',
     'footer.contact.heading': 'ติดต่อเรา',
-    'footer.contact.email':   '[อีเมล — รอการยืนยัน]',
-    'footer.contact.phone':   '[โทรศัพท์ — รอการยืนยัน]',
+    'footer.contact.email':   'contact@anrcf.com',
+    'footer.contact.phone':   '+66 83 192 9996',
     'footer.copyright':       '© 2569 มูลนิธิอนุรักษ์ทรัพยากรธรรมชาติอันดามัน สงวนลิขสิทธิ์ทุกประการ'
   },
 
@@ -394,11 +394,11 @@ window.SITE_CONTENT = {
   ru: {
 
     // ── META ──────────────────────────────────────────────────────
-    'meta.title':        'Благотворительный гольф-турнир по охране природных ресурсов Андамана 2026',
+    'meta.title':        'Green Charity Golf Tournament 2026 — Благотворительный гольф-турнир в Бангкоке',
     'meta.description':  'Присоединяйтесь к самому престижному благотворительному гольф-турниру Таиланда. 25 мая 2026 года, Королевский спортивный центр армии Таиланда «Раминтра», Бангкок. Чистые доходы направляются в Молодёжный фонд охраны природы.',
 
     // ── NAVIGATION ────────────────────────────────────────────────
-    'nav.logo':          'Andaman Golf Cup',
+    'nav.logo':          'Green Charity Golf',
     'nav.about':         'О турнире',
     'nav.agenda':        'Программа',
     'nav.tickets':       'Билеты',
@@ -408,7 +408,7 @@ window.SITE_CONTENT = {
 
     // ── HERO ──────────────────────────────────────────────────────
     'hero.eyebrow':      'Благотворительное мероприятие ANRCF · Бангкок, Таиланд',
-    'hero.headline':     'Andaman Golf 2026',
+    'hero.headline':     'Green Charity Golf Tournament 2026',
     'hero.subheadline':  'Место встречи самых влиятельных людей Таиланда — в атмосфере гольфа, единой цели и подлинного партнёрства.',
     'hero.date':         '25 мая 2026 · Бангкок, Таиланд',
     'hero.proof.label':  'Только 35 команд',
@@ -436,7 +436,7 @@ window.SITE_CONTENT = {
     'agenda.item1.desc':   'Получите карточку счёта, насладитесь приветственным обедом и познакомьтесь с другими участниками перед началом турнира.',
     'agenda.item2.time':   '12:00',
     'agenda.item2.title':  'Старт гольф-турнира',
-    'agenda.item2.desc':   'Andaman Golf 2026 официально стартует. Команды соревнуются в командном формате на чемпионском поле.',
+    'agenda.item2.desc':   'Green Charity Golf Tournament 2026 официально стартует. Команды соревнуются в командном формате на чемпионском поле.',
     'agenda.item3.time':   '18:00',
     'agenda.item3.title':  'Торжественный ужин — зал Пху Чомпон',
     'agenda.item3.desc':   'Торжественный ужин в зале Пху Чомпон объединяет всех участников для вечера праздника и элитного нетворкинга.',
@@ -560,15 +560,15 @@ window.SITE_CONTENT = {
     'confirm.heading':       'Благодарим вас',
     'confirm.body':          'Ваша регистрация получена. Наша команда свяжется с вами в течение 48 часов, чтобы подтвердить ваше место и предоставить дальнейшие сведения об оплате и организационных деталях.',
     'confirm.bank.heading':  'Реквизиты для оплаты',
-    'confirm.bank.details':  'Наименование счёта: Andaman Natural Resources Conservation Foundation\nБанк: [НАЗВАНИЕ БАНКА — УТОЧНЯЕТСЯ]\nНомер счёта: [XXXX-XXXX-XXXX — УТОЧНЯЕТСЯ]\nСумма: согласно выбранной категории команды',
-    'confirm.bank.note':     'Пожалуйста, укажите ваше полное имя в качестве назначения платежа и отправьте подтверждение перевода на [EMAIL — УТОЧНЯЕТСЯ].',
+    'confirm.bank.details':  'Наименование счёта: Andaman Natural Resources Conservation Foundation\nБанк: Government Savings Bank (GSB / ออมสิน)\nНомер счёта: 020154145807\nСумма: согласно выбранной категории команды',
+    'confirm.bank.note':     'Пожалуйста, укажите ваше полное имя в качестве назначения платежа и отправьте подтверждение перевода на contact@anrcf.com.',
 
     // ── FOOTER ────────────────────────────────────────────────────
     'footer.tagline':         'Престижный благотворительный гольф-турнир, объединяющий самых влиятельных людей Таиланда ради сохранения природы.',
     'footer.links.heading':   'Быстрые ссылки',
     'footer.contact.heading': 'Контакты',
-    'footer.contact.email':   '[EMAIL — УТОЧНЯЕТСЯ]',
-    'footer.contact.phone':   '[ТЕЛЕФОН — УТОЧНЯЕТСЯ]',
+    'footer.contact.email':   'contact@anrcf.com',
+    'footer.contact.phone':   '+66 83 192 9996',
     'footer.copyright':       '© 2026 Andaman Natural Resources Conservation Foundation. Все права защищены.'
   }
 
