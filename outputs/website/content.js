@@ -26,11 +26,11 @@ window.SITE_CONTENT = {
   en: {
 
     // ── META ──────────────────────────────────────────────────────
-    'meta.title':        'Green Charity Golf Tournament 2026 — A Premier Charity Golf Event in Bangkok',
+    'meta.title':        'Andaman Andaman Green Charity Golf Tournament 2026 — A Premier Charity Golf Event in Bangkok',
     'meta.description':  'Join Thailand\'s most prestigious charity golf event. 26 June 2026, Royal Thai Army Sports Center Ramindra, Bangkok. Register your team and connect with Thailand\'s most influential leaders. Net proceeds fund youth conservation.',
 
     // ── NAVIGATION ────────────────────────────────────────────────
-    'nav.logo':          'Green Charity Golf',
+    'nav.logo':          'Andaman Green Charity Golf',
     'nav.about':         'About',
     'nav.agenda':        'Agenda',
     'nav.tickets':       'Tickets',
@@ -40,7 +40,7 @@ window.SITE_CONTENT = {
 
     // ── HERO ──────────────────────────────────────────────────────
     'hero.eyebrow':      'ANRCF Charity Event · Bangkok, Thailand',
-    'hero.headline':     'Green Charity Golf Tournament 2026',
+    'hero.headline':     'Andaman Green Charity Golf Tournament 2026',
     'hero.subheadline':  'Where Thailand\'s most influential voices gather for golf, purpose, and connection.',
     'hero.date':         '26 June 2026 · Bangkok, Thailand',
     'hero.proof.label':  '35 Teams — Limited Places',
@@ -68,7 +68,7 @@ window.SITE_CONTENT = {
     'agenda.item1.desc':   'Collect your Score Card, enjoy a welcome lunch, and meet your fellow participants before the tournament begins.',
     'agenda.item2.time':   '12:00 PM',
     'agenda.item2.title':  'Golf Tournament Begins',
-    'agenda.item2.desc':   'The Green Charity Golf Tournament 2026 commences. Teams compete in a team format across the championship course.',
+    'agenda.item2.desc':   'The Andaman Green Charity Golf Tournament 2026 commences. Teams compete in a team format across the championship course.',
     'agenda.item3.time':   '6:00 PM',
     'agenda.item3.title':  'Gala Dinner — Phu Chomphon Hall',
     'agenda.item3.desc':   'An exclusive gala dinner at Phu Chomphon Hall, bringing all participants together for an evening of celebration and elite networking.',
@@ -204,7 +204,7 @@ window.SITE_CONTENT = {
   th: {
 
     // ── META ──────────────────────────────────────────────────────
-    'meta.title':        'Green Charity Golf Tournament 2026 — กอล์ฟการกุศลเพื่อสิ่งแวดล้อม',
+    'meta.title':        'Andaman Green Charity Golf Tournament 2026 — กอล์ฟการกุศลเพื่อสิ่งแวดล้อม',
     'meta.description':  'ร่วมงานกอล์ฟการกุศลเพื่อสิ่งแวดล้อม วันที่ 26 มิถุนายน 2569 ณ สนามกอล์ฟ ศูนย์พัฒนากีฬากองทัพบก รามอินทรา (Royal Thai Army Sports Center Ramindra) กรุงเทพมหานคร รายได้สมทบทุนกองทุนเยาวชนรักษ์สิ่งแวดล้อม',
 
     // ── NAVIGATION ────────────────────────────────────────────────
@@ -246,7 +246,7 @@ window.SITE_CONTENT = {
     'agenda.item1.desc':   'ลงทะเบียนรับ Score Card พร้อมรับประทานอาหารกลางวันต้อนรับก่อนเริ่มการแข่งขัน',
     'agenda.item2.time':   '12:00 น.',
     'agenda.item2.title':  'เริ่มการแข่งขันกอล์ฟ',
-    'agenda.item2.desc':   'Green Charity Golf Tournament 2026 เริ่มต้นอย่างเป็นทางการ ทีมต่าง ๆ แข่งขันในรูปแบบทีมบนสนามแชมเปี้ยนชิพ',
+    'agenda.item2.desc':   'Andaman Green Charity Golf Tournament 2026 เริ่มต้นอย่างเป็นทางการ ทีมต่าง ๆ แข่งขันในรูปแบบทีมบนสนามแชมเปี้ยนชิพ',
     'agenda.item3.time':   '18:00 น.',
     'agenda.item3.title':  'งานเลี้ยงรับรองอย่างเป็นทางการ ณ ห้องพู่จอมพล',
     'agenda.item3.desc':   'งานเลี้ยงรับรองอย่างเป็นทางการ ณ ห้องพู่จอมพล รวบรวมผู้เข้าร่วมทุกท่านในค่ำคืนแห่งการเฉลิมฉลองและการสร้างสัมพันธ์อันมีคุณค่า',
@@ -382,11 +382,11 @@ window.SITE_CONTENT = {
   ru: {
 
     // ── META ──────────────────────────────────────────────────────
-    'meta.title':        'Green Charity Golf Tournament 2026 — Благотворительный гольф-турнир в Бангкоке',
+    'meta.title':        'Andaman Green Charity Golf Tournament 2026 — Благотворительный гольф-турнир в Бангкоке',
     'meta.description':  'Присоединяйтесь к самому престижному благотворительному гольф-турниру Таиланда. 25 мая 2026 года, Королевский спортивный центр армии Таиланда «Раминтра», Бангкок. Чистые доходы направляются в Молодёжный фонд охраны природы.',
 
     // ── NAVIGATION ────────────────────────────────────────────────
-    'nav.logo':          'Green Charity Golf',
+    'nav.logo':          'Andaman Green Charity Golf',
     'nav.about':         'О турнире',
     'nav.agenda':        'Программа',
     'nav.tickets':       'Билеты',
@@ -396,7 +396,7 @@ window.SITE_CONTENT = {
 
     // ── HERO ──────────────────────────────────────────────────────
     'hero.eyebrow':      'Благотворительное мероприятие ANRCF · Бангкок, Таиланд',
-    'hero.headline':     'Green Charity Golf Tournament 2026',
+    'hero.headline':     'Andaman Green Charity Golf Tournament 2026',
     'hero.subheadline':  'Место встречи самых влиятельных людей Таиланда — в атмосфере гольфа, единой цели и подлинного партнёрства.',
     'hero.date':         '26 июня 2026 · Бангкок, Таиланд',
     'hero.proof.label':  'Только 35 команд',
@@ -424,7 +424,7 @@ window.SITE_CONTENT = {
     'agenda.item1.desc':   'Получите карточку счёта, насладитесь приветственным обедом и познакомьтесь с другими участниками перед началом турнира.',
     'agenda.item2.time':   '12:00',
     'agenda.item2.title':  'Старт гольф-турнира',
-    'agenda.item2.desc':   'Green Charity Golf Tournament 2026 официально стартует. Команды соревнуются в командном формате на чемпионском поле.',
+    'agenda.item2.desc':   'Andaman Green Charity Golf Tournament 2026 официально стартует. Команды соревнуются в командном формате на чемпионском поле.',
     'agenda.item3.time':   '18:00',
     'agenda.item3.title':  'Торжественный ужин — зал Пху Чомпон',
     'agenda.item3.desc':   'Торжественный ужин в зале Пху Чомпон объединяет всех участников для вечера праздника и элитного нетворкинга.',
