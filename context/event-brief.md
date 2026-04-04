@@ -8,13 +8,13 @@
 
 ## Event Overview
 - **Official Name:** Green Charity Golf Tournament 2026 (กอล์ฟการกุศลเพื่อสิ่งแวดล้อม)
-- **Date:** May 25, 2026
-- **Time:** 1:00 PM – 6:00 PM (golf), then gala banquet dinner from ~6:00 PM onward
+- **Date:** June 26, 2026 (Friday)
+- **Time:** 12:00 PM – 6:00 PM (golf), then gala banquet dinner from ~6:00 PM onward
 - **Location:** สนามกอล์ฟ ศูนย์พัฒนากีฬากองทัพบก รามอินทรา / Royal Thai Army Sports Center Ramindra, Bangkok
 - **Nature:** Charity golf to fund ANRCF Youth Conservation Fund
 
 ## Agenda
-1. 1:00 PM — Opening/announcement meeting
+1. 12:00 PM — Opening/announcement meeting
 2. Press conference
 3. Golf tournament begins (team format)
 4. ~6:00 PM — Gala banquet dinner (all participants)

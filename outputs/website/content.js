@@ -27,7 +27,7 @@ window.SITE_CONTENT = {
 
     // ── META ──────────────────────────────────────────────────────
     'meta.title':        'Green Charity Golf Tournament 2026 — A Premier Charity Golf Event in Bangkok',
-    'meta.description':  'Join Thailand\'s most prestigious charity golf event. 25 May 2026, Royal Thai Army Sports Center Ramindra, Bangkok. Register your team and connect with Thailand\'s most influential leaders. Net proceeds fund youth conservation.',
+    'meta.description':  'Join Thailand\'s most prestigious charity golf event. 26 June 2026, Royal Thai Army Sports Center Ramindra, Bangkok. Register your team and connect with Thailand\'s most influential leaders. Net proceeds fund youth conservation.',
 
     // ── NAVIGATION ────────────────────────────────────────────────
     'nav.logo':          'Green Charity Golf',
@@ -42,7 +42,7 @@ window.SITE_CONTENT = {
     'hero.eyebrow':      'ANRCF Charity Event · Bangkok, Thailand',
     'hero.headline':     'Green Charity Golf Tournament 2026',
     'hero.subheadline':  'Where Thailand\'s most influential voices gather for golf, purpose, and connection.',
-    'hero.date':         '25 May 2026 · Bangkok, Thailand',
+    'hero.date':         '26 June 2026 · Bangkok, Thailand',
     'hero.proof.label':  '35 Teams — Limited Places',
     'hero.proof.sub':    'Exclusive Charity Golf',
     'hero.cta.register': 'Reserve Your Place ↗',
@@ -211,7 +211,7 @@ window.SITE_CONTENT = {
 
     // ── META ──────────────────────────────────────────────────────
     'meta.title':        'Green Charity Golf Tournament 2026 — กอล์ฟการกุศลเพื่อสิ่งแวดล้อม',
-    'meta.description':  'ร่วมงานกอล์ฟการกุศลเพื่อสิ่งแวดล้อม วันที่ 25 พฤษภาคม 2569 ณ สนามกอล์ฟ ศูนย์พัฒนากีฬากองทัพบก รามอินทรา (Royal Thai Army Sports Center Ramindra) กรุงเทพมหานคร รายได้สมทบทุนกองทุนเยาวชนรักษ์สิ่งแวดล้อม',
+    'meta.description':  'ร่วมงานกอล์ฟการกุศลเพื่อสิ่งแวดล้อม วันที่ 26 มิถุนายน 2569 ณ สนามกอล์ฟ ศูนย์พัฒนากีฬากองทัพบก รามอินทรา (Royal Thai Army Sports Center Ramindra) กรุงเทพมหานคร รายได้สมทบทุนกองทุนเยาวชนรักษ์สิ่งแวดล้อม',
 
     // ── NAVIGATION ────────────────────────────────────────────────
     'nav.logo':          'กอล์ฟการกุศลเพื่อสิ่งแวดล้อม',
@@ -224,9 +224,9 @@ window.SITE_CONTENT = {
 
     // ── HERO ──────────────────────────────────────────────────────
     'hero.eyebrow':      'อีเว้นท์การกุศล ANRCF · กรุงเทพมหานคร ประเทศไทย',
-    'hero.headline':     'Green Charity Golf Tournament 2026',
+    'hero.headline':     'กอล์ฟการกุศลเพื่อสิ่งแวดล้อม 2026',
     'hero.subheadline':  'สถานที่ที่บุคคลผู้ทรงอิทธิพลที่สุดของประเทศไทยมาพบปะกัน เพื่อกอล์ฟ เพื่อเจตนารมณ์ และเพื่อสายสัมพันธ์อันยิ่งใหญ่',
-    'hero.date':         '25 พฤษภาคม 2569 · กรุงเทพมหานคร ประเทศไทย',
+    'hero.date':         '26 มิถุนายน 2569 · กรุงเทพมหานคร ประเทศไทย',
     'hero.proof.label':  '35 ทีมเท่านั้น',
     'hero.proof.sub':    'กอล์ฟการกุศลสุดเอ็กซ์คลูซีฟ',
     'hero.cta.register': 'ลงทะเบียนทีมของคุณ',
