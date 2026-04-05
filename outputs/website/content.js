@@ -62,7 +62,13 @@ window.SITE_CONTENT = {
     'about.stat4.label': 'Unforgettable Day',
 
     // ── AGENDA ────────────────────────────────────────────────────
-    'agenda.heading':      'The Day\'s Programme',
+    'agenda.heading':        'The Day\'s Programme',
+    'agenda.date':           '26 JUNE 2026',
+    'agenda.time':           '9:30 AM – 9:00 PM',
+    'agenda.venue.name':     'ARMY SPORTS DEVELOPMENT CENTER',
+    'agenda.venue.location': 'Bangkok, Thailand',
+    'agenda.venue.photo1':   'Royal Thai Army Sports Center Ramindra',
+    'agenda.venue.photo2':   'Championship Course — Bangkok',
     'agenda.item1.time':   '9:30 AM',
     'agenda.item1.title':  'Registration & Welcome Lunch',
     'agenda.item1.desc':   'Collect your Score Card, enjoy a welcome lunch, and meet your fellow participants before the tournament begins.',
@@ -240,7 +246,13 @@ window.SITE_CONTENT = {
     'about.stat4.label': 'วันที่ไม่อาจลืมเลือน',
 
     // ── AGENDA ────────────────────────────────────────────────────
-    'agenda.heading':      'กำหนดการของงาน',
+    'agenda.heading':        'กำหนดการของงาน',
+    'agenda.date':           '26 มิถุนายน 2569',
+    'agenda.time':           '09:30 น. – 21:00 น.',
+    'agenda.venue.name':     'ศูนย์พัฒนากีฬากองทัพบก',
+    'agenda.venue.location': 'กรุงเทพมหานคร ประเทศไทย',
+    'agenda.venue.photo1':   'ศูนย์กีฬาแรมอินทรา กองทัพบก',
+    'agenda.venue.photo2':   'สนามแชมเปี้ยนชิพ — กรุงเทพฯ',
     'agenda.item1.time':   '09:30 น.',
     'agenda.item1.title':  'ลงทะเบียนและรับประทานอาหารกลางวัน',
     'agenda.item1.desc':   'ลงทะเบียนรับ Score Card พร้อมรับประทานอาหารกลางวันต้อนรับก่อนเริ่มการแข่งขัน',
@@ -418,7 +430,13 @@ window.SITE_CONTENT = {
     'about.stat4.label': 'Незабываемый день',
 
     // ── AGENDA ────────────────────────────────────────────────────
-    'agenda.heading':      'Программа дня',
+    'agenda.heading':        'Программа дня',
+    'agenda.date':           '26 ИЮНЯ 2026',
+    'agenda.time':           '09:30 – 21:00',
+    'agenda.venue.name':     'СПОРТИВНЫЙ ЦЕНТР КОРОЛЕВСКОЙ АРМИИ',
+    'agenda.venue.location': 'Бангкок, Таиланд',
+    'agenda.venue.photo1':   'Спортивный центр Раминдра Королевской армии',
+    'agenda.venue.photo2':   'Чемпионский корт — Бангкок',
     'agenda.item1.time':   '9:30',
     'agenda.item1.title':  'Регистрация и обед',
     'agenda.item1.desc':   'Получите карточку счёта, насладитесь приветственным обедом и познакомьтесь с другими участниками перед началом турнира.',
