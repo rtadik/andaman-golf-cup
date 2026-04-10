@@ -573,7 +573,7 @@ small {
   font-family: var(--font-sans);
   font-size: clamp(60px, 9vw, 112px);
   font-weight: 800;
-  line-height: 0.93;
+  line-height: 1.05;
   color: var(--text-dark);
   letter-spacing: -0.04em;
   margin-bottom: 40px;
@@ -1121,6 +1121,7 @@ small {
   background: rgba(201, 168, 76, 0.15) !important;
   border: 1px solid var(--gold) !important;
   color: var(--gold) !important;
+  padding: 12px 28px !important;
 }
 
 /* Tickets single grid */
@@ -2408,6 +2409,26 @@ html[lang="th"] h1 {
 
 html[lang="th"] h2 {
   font-weight: 600;
+}
+
+/* EN/RU nav: smaller font, title case instead of all-caps */
+html[lang="en"] .nav-links a,
+html[lang="ru"] .nav-links a {
+  font-size: 11px;
+  text-transform: capitalize;
+}
+
+/* Thai competition section: larger text for readability */
+html[lang="th"] .competition-list li {
+  font-size: 17px;
+}
+
+html[lang="th"] .competition-col-heading {
+  font-size: 14px;
+}
+
+html[lang="th"] .competition-eligibility {
+  font-size: 17px;
 }
 
 /* ==========================================================================
