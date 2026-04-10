@@ -192,7 +192,7 @@ window.SITE_CONTENT = {
     'confirm.heading':       'Thank You',
     'confirm.body':          'Your registration has been received. Our team will contact you within 48 hours to confirm your place and provide further details regarding payment and logistics.',
     'confirm.bank.heading':  'Payment Details',
-    'confirm.bank.details':  'Account Name: Andaman Natural Resources Conservation Foundation\nBank: Government Savings Bank (GSB / ออมสิน)\nAccount Number: 020154145807\nAmount: As per selected team category',
+    'confirm.bank.details':  'Account Name: Andaman Natural Resources Conservation Foundation\nBank: Government Savings Bank (GSB / ออมสิน)\nAccount Number: 020-0455054-6\nAmount: As per selected team category',
     'confirm.bank.note':     'Please use your full name as the transfer reference and send proof of payment to contact@anrcf.com.',
 
     // ── FOOTER ────────────────────────────────────────────────────
@@ -376,7 +376,7 @@ window.SITE_CONTENT = {
     'confirm.heading':       'ขอบคุณท่าน',
     'confirm.body':          'ได้รับการลงทะเบียนของท่านเรียบร้อยแล้ว ทีมงานของเราจะติดต่อท่านภายใน 48 ชั่วโมง เพื่อยืนยันที่นั่งและให้ข้อมูลเพิ่มเติมเกี่ยวกับการชำระเงินและรายละเอียดการเข้าร่วมงาน',
     'confirm.bank.heading':  'รายละเอียดการชำระเงิน',
-    'confirm.bank.details':  'ชื่อบัญชี: มูลนิธิอนุรักษ์ทรัพยากรธรรมชาติอันดามัน\nธนาคาร: ธนาคารออมสิน\nเลขที่บัญชี: 020154145807\nจำนวนเงิน: ตามประเภทของทีมที่เลือก',
+    'confirm.bank.details':  'ชื่อบัญชี: มูลนิธิทรัพยากรธรรมชาติอันดามัน\nธนาคาร: ธนาคารออมสิน\nเลขที่บัญชี: ๐๒๐-๐๔๕๕๐๕๔-๖\nจำนวนเงิน: ตามประเภทของทีมที่เลือก',
     'confirm.bank.note':     'กรุณาใช้ชื่อ-นามสกุลเต็มของท่านเป็นอ้างอิงการโอน และส่งหลักฐานการชำระเงินมาที่ contact@anrcf.com',
 
     // ── FOOTER ────────────────────────────────────────────────────
@@ -560,7 +560,7 @@ window.SITE_CONTENT = {
     'confirm.heading':       'Благодарим вас',
     'confirm.body':          'Ваша регистрация получена. Наша команда свяжется с вами в течение 48 часов, чтобы подтвердить ваше место и предоставить дальнейшие сведения об оплате и организационных деталях.',
     'confirm.bank.heading':  'Реквизиты для оплаты',
-    'confirm.bank.details':  'Наименование счёта: Andaman Natural Resources Conservation Foundation\nБанк: Government Savings Bank (GSB / ออมสิน)\nНомер счёта: 020154145807\nСумма: согласно выбранной категории команды',
+    'confirm.bank.details':  'Наименование счёта: Andaman Natural Resources Conservation Foundation\nБанк: Government Savings Bank (GSB / ออมสิน)\nНомер счёта: 020-0455054-6\nСумма: согласно выбранной категории команды',
     'confirm.bank.note':     'Пожалуйста, укажите ваше полное имя в качестве назначения платежа и отправьте подтверждение перевода на contact@anrcf.com.',
 
     // ── FOOTER ────────────────────────────────────────────────────
